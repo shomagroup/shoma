@@ -17,7 +17,10 @@
 
 // CURSOR HOVER
 $('[white]').on('mouseenter mouseleave', function() {
-    $('.cursor').toggleClass('white');
+    $('.cursor').addClass('white');
+});
+$.not('[white]').on('mouseenter mouseleave', function() {
+    $('.cursor').removeClass('white');
 });
 $('a').on('mouseenter mouseleave', function() {
     $('.c-info').text($(this).attr('info'));
