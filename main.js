@@ -13,11 +13,16 @@
     };
     window.addEventListener("mousemove", cursorActive);
 })();
-// INIT SET
-$('.update-check').text('BETA1');
+
+$('.update-check').text('BETA2');
 setTimeout(function() {
     $('.update-check').css('display', 'none');
 }, 1000);
+
+
+// INIT SET
+
+
 
 // CURSOR HOVER
 $('[white]').on('mouseenter mouseleave', function() {
