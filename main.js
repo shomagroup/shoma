@@ -1,6 +1,3 @@
-// INITIAL SETTINGS
-
-
 // CUSTOM MOUSE
 (function() {
     var cursor = document.querySelector(".cursor");
