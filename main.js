@@ -19,13 +19,11 @@ setTimeout(function() {
     $('.update-check').css('display', 'none');
 }, 1000);
 
-
-
 // CURSOR HOVER
 $('[white]').on('mouseenter mouseleave', function() {
     $('.cursor').addClass('white');
 });
-$.not('[white]').on('mouseenter mouseleave', function() {
+$('*').not('[white]').on('mouseenter mouseleave', function() {
     $('.cursor').removeClass('white');
 });
 $('a').on('mouseenter mouseleave', function() {
