@@ -14,6 +14,10 @@
     window.addEventListener("mousemove", cursorActive);
 })();
 // INIT SET
+$('update-check').text('BETA1');
+setTimeout(function() {
+    $('update-check').css('display', 'none');
+}, 1000);
 
 // CURSOR HOVER
 $('[white]').on('mouseenter mouseleave', function() {
