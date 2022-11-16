@@ -13,6 +13,7 @@
     };
     window.addEventListener("mousemove", cursorActive);
 })();
+
 // BETA CHECK
 $('.update-check').text('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
 $('.update-check').addClass('show');
