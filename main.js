@@ -15,11 +15,11 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-$('.update-check').addClass('show');
-setTimeout(function() {
-    $('.update-check').removeClass('show');
-}, 1500);
+// $('.update-check').text('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+// $('.update-check').addClass('show');
+// setTimeout(function() {
+//     $('.update-check').removeClass('show');
+// }, 1500);
 
 // ClASS CLENSER
 $('.active').removeClass('active');
