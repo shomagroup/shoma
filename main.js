@@ -45,8 +45,7 @@ $('[draggy]').on('mouseout', function() {
 });
 // LINK HOVER
 $('a').on('mouseover', function() {
-    // $('.c-info').text($(this).attr('info'));
-
+    $('.c-info').text($(this).attr('info'));
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('active white');
         $('.c-info').addClass('active');
