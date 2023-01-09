@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta8.3');
+$('.update-check').text('draggyBeta8.4');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
@@ -45,7 +45,10 @@ $('[draggy]').on('mouseout', function() {
 });
 // LINK HOVER
 $('a').on('mouseover', function() {
-    $('.c-info').text($(this).attr('info'));
+    if (!$(this).attr('draggy')) { $('.c-info').text($(this).attr('info')); }
+    if ($(this).attr('draggy')) { $('.c-info').text('VIEW'); }
+
+
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('active white');
         $('.c-info').addClass('active');
@@ -57,9 +60,7 @@ $('a').on('mouseover', function() {
     } else {
         $('.cursor').addClass('active');
     }
-    if ($(this).attr('draggy')) {
-        $('.c-info').text('VIEW');
-    }
+
 });
 $('a').on('mouseout', function() {
     if ($(this).attr('info') && $(this).attr('white')) {
