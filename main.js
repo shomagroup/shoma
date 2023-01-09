@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta3');
+$('.update-check').text('draggyBeta4');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
@@ -39,14 +39,20 @@ $('[white]').on('mouseleave', function() {
 $('[draggy]').on('mouseover', function() {
     $('.cursor').addClass('draggy');
     $('.c-info').text('DRAG');
+    $('a').on('mouseenter', function() {
+        $('.cursor').removeClass('draggy');
+    });
+    $('a').on('mouseleave', function() {
+        $('.cursor').addClass('draggy');
+    });
 });
 $('[draggy]').on('mouseleave', function() {
     $('.cursor').removeClass('draggy');
 });
 // LINK HOVER
-$('a, div[draggy] a').on('mouseenter', function() {
+$('a').on('mouseenter', function() {
     $('.c-info').text($(this).attr('info'));
-    $('.cursor').removeClass('draggy');
+
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('active white');
         $('.c-info').addClass('active');
