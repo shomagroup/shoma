@@ -45,9 +45,8 @@ $('[draggy]').on('mouseout', function() {
 });
 // LINK HOVER
 $('a').on('mouseover', function() {
-    if ($(this).attr('info') && $(this).attr('draggy')) {
-        $('.c-info').text('urmom');
-    } else if ($(this).attr('info') && $(this).attr('white')) {
+    $('.c-info').text($(this).attr('info'));
+    if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('active white');
         $('.c-info').addClass('active');
     } else if ($(this).attr('info')) {
@@ -58,7 +57,9 @@ $('a').on('mouseover', function() {
     } else {
         $('.cursor').addClass('active');
     }
-    $('.c-info').text($(this).attr('info'));
+    if ($(this).attr('draggy')) {
+        $('.c-info').removeClass('active');
+    }
 });
 $('a').on('mouseout', function() {
     if ($(this).attr('info') && $(this).attr('white')) {
