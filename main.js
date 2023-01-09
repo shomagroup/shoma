@@ -45,9 +45,9 @@ $('[draggy]').on('mouseout', function() {
 });
 // LINK HOVER
 $('a').on('mouseover', function() {
-    if (!$(this).attr('draggy')) {
-        $('.c-info').text($(this).attr('info'));
-    } else if ($(this).attr('draggy')) {
+    $('.c-info').text($(this).attr('info'));
+    if ($(this).attr('draggy')) {
+        $('.cursor').addClass('active');
         $('.c-info').text('VIEW');
     } else if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('active white');
