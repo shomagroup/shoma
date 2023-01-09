@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta7.2');
+$('.update-check').text('draggyBeta7.3');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
@@ -48,7 +48,6 @@ $('[draggy]').on('mouseout', function() {
 // LINK HOVER
 $('a').on('mouseover', function() {
     $('.c-info').text($(this).attr('info'));
-
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('active white');
         $('.c-info').addClass('active');
@@ -62,7 +61,6 @@ $('a').on('mouseover', function() {
     }
 });
 $('a').on('mouseout', function() {
-    $('.c-info').text($(this).attr('info'));
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').removeClass('active white');
         $('.c-info').removeClass('active');
@@ -71,8 +69,10 @@ $('a').on('mouseout', function() {
         $('.c-info').removeClass('active');
     } else if ($(this).attr('white')) {
         $('.cursor').removeClass('active white');
+        $('.c-info').removeClass('active');
     } else {
         $('.cursor').removeClass('active');
+        $('.c-info').removeClass('active');
     }
 });
 
