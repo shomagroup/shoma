@@ -39,8 +39,6 @@ $('[white]').on('mouseout', function() {
 $('[draggy]').on('mouseover', function() {
     $('.cursor').addClass('draggy');
     $('.c-info').text('DRAG');
-    $('a').on('mouseover', function() { $('.cursor').removeClass('draggy'); });
-    $('a').on('mouseout', function() { $('.cursor').addClass('draggy'); });
 });
 $('[draggy]').on('mouseout', function() {
     $('.cursor').removeClass('draggy');
