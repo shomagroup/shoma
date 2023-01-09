@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta8.4');
+$('.update-check').text('draggyBeta8.5');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
@@ -45,11 +45,11 @@ $('[draggy]').on('mouseout', function() {
 });
 // LINK HOVER
 $('a').on('mouseover', function() {
-    if (!$(this).attr('draggy')) { $('.c-info').text($(this).attr('info')); }
-    if ($(this).attr('draggy')) { $('.c-info').text('VIEW'); }
-
-
-    if ($(this).attr('info') && $(this).attr('white')) {
+    if (!$(this).attr('draggy')) {
+        $('.c-info').text($(this).attr('info'));
+    } else if ($(this).attr('draggy')) {
+        $('.c-info').text('VIEW');
+    } else if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('active white');
         $('.c-info').addClass('active');
     } else if ($(this).attr('info')) {
