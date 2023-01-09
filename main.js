@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta7.5');
+$('.update-check').text('draggyBeta7.6');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
