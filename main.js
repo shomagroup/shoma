@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta7.3');
+$('.update-check').text('draggyBeta7.4');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
@@ -48,6 +48,9 @@ $('[draggy]').on('mouseout', function() {
 // LINK HOVER
 $('a').on('mouseover', function() {
     $('.c-info').text($(this).attr('info'));
+    if ($('cursor').is('draggy')) {
+        $('.c-info').text('view');
+    }
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('active white');
         $('.c-info').addClass('active');
