@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta7.6');
+$('.update-check').text('draggyBeta7.7');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
@@ -45,7 +45,6 @@ $('[draggy]').on('mouseout', function() {
 });
 // LINK HOVER
 $('a').on('mouseover', function() {
-    $('.c-info').text($(this).attr('info'));
     if ($(this).attr('info') && $(this).attr('draggy')) {
         $('.c-info').text('urmom');
     } else if ($(this).attr('info') && $(this).attr('white')) {
@@ -59,6 +58,7 @@ $('a').on('mouseover', function() {
     } else {
         $('.cursor').addClass('active');
     }
+    $('.c-info').text($(this).attr('info'));
 });
 $('a').on('mouseout', function() {
     if ($(this).attr('info') && $(this).attr('white')) {
