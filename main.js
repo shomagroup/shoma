@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta6');
+$('.update-check').text('draggyBeta7');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
@@ -33,20 +33,20 @@ $('.language[en]').addClass('active');
 $('[white]').on('mouseover', function() {
     $('.cursor').addClass('white');
 });
-$('[white]').on('mouseleave', function() {
+$('[white]').not(on('mouseover', function() {
     $('.cursor').removeClass('white');
-});
+}));
 $('[draggy]').on('mouseover', function() {
     $('.cursor').addClass('draggy');
     $('.c-info').text('DRAG');
     $('a').on('mouseover', function() { $('.cursor').removeClass('draggy'); });
     $('a').on('mouseleave', function() { $('.cursor').addClass('draggy'); });
 });
-$('[draggy]').on('mouseleave', function() {
+$('[draggy]').not(on('mouseover', function() {
     $('.cursor').removeClass('draggy');
-});
+}));
 // LINK HOVER
-$('a').on('mouseover', function() {
+$('a').not(on('mouseover', function() {
     $('.c-info').text($(this).attr('info'));
 
     if ($(this).attr('info') && $(this).attr('white')) {
@@ -60,7 +60,7 @@ $('a').on('mouseover', function() {
     } else {
         $('.cursor').addClass('active');
     }
-});
+}));
 $('a').not(on('mouseover', function() {
     $('.c-info').text($(this).attr('info'));
     if ($(this).attr('info') && $(this).attr('white')) {
