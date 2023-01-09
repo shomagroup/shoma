@@ -58,7 +58,6 @@ $('a').on('mouseover', function() {
         $('.cursor').addClass('active');
     }
     if ($(this).attr('draggy') && $(this).attr('info')) {
-        $('.c-info').addClass('active');
         $('.c-info').text('aaa');
     }
 });
