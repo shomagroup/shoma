@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta7.8');
+$('.update-check').text('draggyBeta7.9');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
@@ -46,6 +46,7 @@ $('[draggy]').on('mouseout', function() {
 // LINK HOVER
 $('a').on('mouseover', function() {
     $('.c-info').text($(this).attr('info'));
+    if ($(this).attr('draggy')) { $('.c-info').text('aaaaaaaaaaaa'); }
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('active white');
         $('.c-info').addClass('active');
@@ -56,9 +57,6 @@ $('a').on('mouseover', function() {
         $('.cursor').addClass('active white');
     } else {
         $('.cursor').addClass('active');
-    }
-    if ($(this).attr('draggy')) {
-        $('.c-info').removeClass('active');
     }
 });
 $('a').on('mouseout', function() {
