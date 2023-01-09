@@ -44,7 +44,7 @@ $('[draggy]').on('mouseleave', function() {
     $('.cursor').removeClass('draggy');
 });
 // LINK HOVER
-$('a').on('mouseenter', function() {
+$('a, div[draggy] a').on('mouseenter', function() {
     $('.c-info').text($(this).attr('info'));
     $('.cursor').removeClass('draggy');
     if ($(this).attr('info') && $(this).attr('white')) {
