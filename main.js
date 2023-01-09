@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('draggyBeta7');
+$('.update-check').text('draggyBeta7.2');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
@@ -33,20 +33,20 @@ $('.language[en]').addClass('active');
 $('[white]').on('mouseover', function() {
     $('.cursor').addClass('white');
 });
-$('[white]').not(on('mouseover', function() {
+$('[white]').on('mouseout', function() {
     $('.cursor').removeClass('white');
-}));
+});
 $('[draggy]').on('mouseover', function() {
     $('.cursor').addClass('draggy');
     $('.c-info').text('DRAG');
     $('a').on('mouseover', function() { $('.cursor').removeClass('draggy'); });
-    $('a').on('mouseleave', function() { $('.cursor').addClass('draggy'); });
+    $('a').on('mouseout', function() { $('.cursor').addClass('draggy'); });
 });
-$('[draggy]').not(on('mouseover', function() {
+$('[draggy]').on('mouseout', function() {
     $('.cursor').removeClass('draggy');
-}));
+});
 // LINK HOVER
-$('a').not(on('mouseover', function() {
+$('a').on('mouseover', function() {
     $('.c-info').text($(this).attr('info'));
 
     if ($(this).attr('info') && $(this).attr('white')) {
@@ -60,8 +60,8 @@ $('a').not(on('mouseover', function() {
     } else {
         $('.cursor').addClass('active');
     }
-}));
-$('a').not(on('mouseover', function() {
+});
+$('a').on('mouseout', function() {
     $('.c-info').text($(this).attr('info'));
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').removeClass('active white');
@@ -74,7 +74,7 @@ $('a').not(on('mouseover', function() {
     } else {
         $('.cursor').removeClass('active');
     }
-}));
+});
 
 // MENU
 $('.m-button').on('click', function() {
@@ -89,6 +89,6 @@ $('.m-button').on('click', function() {
         $('.c-info').text('close');
     }
 });
-$('.m-link').on('mouseenter mouseleave', function() {
+$('.m-link').on('mouseover mouseout', function() {
     $(this).siblings().toggleClass('nothovered');
 });
