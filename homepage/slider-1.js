@@ -89,5 +89,5 @@ slider2.addEventListener('mousemove', (e) => {
     e.preventDefault();
     const x2 = e.pageX - slider2.offsetLeft;
     const walk2 = x2 - startX2;
-    console.log(walk2);
+    console.log(startX2);
 });
