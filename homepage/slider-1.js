@@ -88,6 +88,6 @@ slider2.addEventListener('mousemove', (e) => {
     if (!isDown) return; //stop function
     e.preventDefault();
     const x2 = e.pageX - slider2.offsetLeft;
-    const walk2 = x2 - startX2
+    const walk2 = x2 - startX2;
     console.log(walk2);
 });
