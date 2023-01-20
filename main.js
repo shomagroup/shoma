@@ -15,7 +15,7 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('slider 1.2');
+$('.update-check').text('slider 1.3');
 $('.update-check').addClass('show');
 setTimeout(function() {
     $('.update-check').removeClass('show');
