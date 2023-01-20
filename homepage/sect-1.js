@@ -28,13 +28,3 @@ tl2.to(".img-cover", {
     duration: 1,
     ease: 1
 });
-tl.from(".sticky-facts.2", {
-    color: "red",
-    duration: 1,
-    ease: 1
-});
-tl.to(".sticky-facts.2", {
-    color: "blue",
-    duration: 1,
-    ease: 1
-});
