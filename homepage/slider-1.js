@@ -40,10 +40,6 @@ slider.addEventListener('mousemove', (e) => {
 var velX = 0;
 var momentumID;
 
-slider.addEventListener('wheel', (e) => {
-    cancelMomentumTracking();
-});
-
 function beginMomentumTracking() {
     cancelMomentumTracking();
     momentumID = requestAnimationFrame(momentumLoop);
