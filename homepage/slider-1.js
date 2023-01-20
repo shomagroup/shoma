@@ -1,4 +1,4 @@
-const slider = document.querySelector('.people-container, .press-container');
+const slider = document.querySelectorAll('.people-container, .press-container');
 let isDown = false;
 let startX;
 let scrollLeft;
