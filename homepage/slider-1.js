@@ -72,7 +72,7 @@ slider2.addEventListener('mousedown', (e) => {
     isDown2 = true;
     slider2.classList.add('active');
     startX2 = e.pageX - slider2.offsetLeft;
-    scrollLeft2 = slider2.scrollLeft;
+    scrollLeft2 = slider2.scrollLeft2;
 });
 slider2.addEventListener('mouseleave', () => {
     isDown2 = false;
