@@ -15,11 +15,11 @@
 })();
 
 // BETA CHECK
-$('.update-check').text('slider 1.5');
-$('.update-check').addClass('show');
-setTimeout(function() {
-    $('.update-check').removeClass('show');
-}, 1500);
+// $('.update-check').text('slider 1.5');
+// $('.update-check').addClass('show');
+// setTimeout(function() {
+//     $('.update-check').removeClass('show');
+// }, 1500);
 
 // ClASS CLENSER
 $('.active').removeClass('active');
@@ -83,12 +83,8 @@ $('.m-button').on('click', function() {
     $('.menu').toggleClass('active');
     if ($(this).is('.active')) {
         $(this).toggleClass('active');
-        $(this).attr('info', 'menu');
-        $('.c-info').text('menu');
     } else {
         $(this).toggleClass('active');
-        $(this).attr('info', 'close');
-        $('.c-info').text('close');
     }
 });
 $('.m-link').on('mouseover mouseout', function() {
