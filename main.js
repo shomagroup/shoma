@@ -1,5 +1,5 @@
 // Update Log
-console.log('ver 2023.06.02 0.3');
+console.log('ver 2023.06.02 0.4');
 
 
 // CUSTOM MOUSE
@@ -17,3 +17,58 @@ console.log('ver 2023.06.02 0.3');
     };
     window.addEventListener("mousemove", cursorActive);
 })();
+
+// ClASS CLENSER
+$('.active').removeClass('active');
+
+
+// LINK HOVER
+$('a').on('mouseover', function() {
+    $('.c-info').text($(this).attr('info'));
+    if ($(this).attr('draggy')) {
+        $('.cursor').addClass('active');
+        $('.c-info').text('VIEW');
+    } else if ($(this).attr('info') && $(this).attr('white')) {
+        $('.cursor').addClass('active white');
+        $('.c-info').addClass('active');
+    } else if ($(this).attr('info')) {
+        $('.cursor').addClass('active');
+        $('.c-info').addClass('active');
+    } else if ($(this).attr('white')) {
+        $('.cursor').addClass('active white');
+    } else {
+        $('.cursor').addClass('active');
+    }
+
+});
+$('a').on('mouseout', function() {
+    if ($(this).attr('info') && $(this).attr('white')) {
+        $('.cursor').removeClass('active white');
+        $('.c-info').removeClass('active');
+    } else if ($(this).attr('info')) {
+        $('.cursor').removeClass('active');
+        $('.c-info').removeClass('active');
+    } else if ($(this).attr('white')) {
+        $('.cursor').removeClass('active white');
+        $('.c-info').removeClass('active');
+    } else {
+        $('.cursor').removeClass('active');
+        $('.c-info').removeClass('active');
+    }
+});
+// MENU
+$('.m-button').on('click', function() {
+    $('.menu').toggleClass('active');
+    if ($(this).is('.active')) {
+        $(this).toggleClass('active');
+        $(this).attr('info', 'menu');
+        $('.c-info').text('menu');
+    } else {
+        $(this).toggleClass('active');
+        $(this).attr('info', 'close');
+        $('.c-info').text('close');
+    }
+});
+$('.m-link').on('mouseover mouseout', function() {
+    $(this).siblings().toggleClass('nothovered');
+});
