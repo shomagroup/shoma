@@ -1,5 +1,5 @@
 // Update Log
-console.log('ver 2023.06.02 0.0');
+console.log('ver 2023.06.02 0.1');
 
 
 // CUSTOM MOUSE
