@@ -15,7 +15,7 @@
 })();
 
 // Update Log
-console.log('ver 2023.05.25 0.0');
+console.log('ver 2023.06.05 0.1');
 
 // ClASS CLENSER
 $('.active').removeClass('active');
@@ -76,7 +76,6 @@ $('a').on('mouseout', function() {
 
 // MENU
 $('.m-button').on('click', function() {
-    $('.menu').toggleClass('active');
     if ($(this).is('.active')) {
         $(this).toggleClass('active');
         $(this).attr('info', 'menu');
