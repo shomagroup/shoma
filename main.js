@@ -1,5 +1,7 @@
 // Update Log
-console.log('ver 2023.06.02 0.4');
+let codeVer = '2023.06.05 0.0';
+console.log('ver' + codeVer);
+$('.codever').text(codeVer)
 
 
 // CUSTOM MOUSE
