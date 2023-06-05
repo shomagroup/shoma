@@ -20,7 +20,7 @@ function logoMove(e) {
     const heroXtraX = (heroMouseX / 2.2).toFixed(2);
     $('#lineargradient').attr('x1', heroXtraX);
     $(heroXtra).attr('offset', heroMouseYper2 + '%');
-    heroLight.style.transform = `translateX(${e.pageX*-1}px) translateY(${e.pageY*-1}px)`;
+    heroLight.style.transform = `translateX(${e.pageX}px) translateY(${e.pageY}px)`;
     this.querySelectorAll('.logosvg').forEach(logoSvg => {
         logoSvg.style.filter = `drop-shadow(${heroMouseOpposeX}px ${heroMouseOpposeY}px 6px #646464) drop-shadow(${heroMouseX}px ${heroMouseY}px 6px #1a1a1a)`;
     });
