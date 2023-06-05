@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.05 0.1';
+let codeVer = '23.06.05 0.2';
 console.log('ver' + codeVer);
 $('.codever').text(codeVer);
 
@@ -43,6 +43,25 @@ $('a').on('mouseover', function() {
     }
 
 });
+
+// ------ CURSOR HOVER ----- //
+// IS WHITE (contents are too light for the cursor to contrast)
+$('[white]').on('mouseover', function() {
+    $('.cursor').addClass('white');
+});
+$('[white]').on('mouseout', function() {
+    $('.cursor').removeClass('white');
+});
+// IS DRAGGY
+$('[draggy]').on('mouseover', function() {
+    $('.cursor').addClass('draggy');
+    $('.c-info').text('DRAG');
+});
+$('[draggy]').on('mouseout', function() {
+    $('.cursor').removeClass('draggy');
+});
+
+// Hover on a link
 $('a').on('mouseout', function() {
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').removeClass('active white');
