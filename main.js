@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.05 0.3';
+let codeVer = '23.06.06 0.0';
 console.log('ver' + codeVer);
 $('.codever').text(codeVer);
 
@@ -27,25 +27,25 @@ $('.editing').removeClass('editing');
 
 // ------ CURSOR HOVER ----- //
 // IS WHITE (contents are too light for the cursor to contrast)
-$('[white]').on('mouseover', function() {
+$('[white]').on('mouseover mouseenter', function() {
     $('.cursor').addClass('white');
 });
-$('[white]').on('mouseout', function() {
+$('[white]').on('mouseout mouseleave', function() {
     $('.cursor').removeClass('white');
 });
 
 // IS DRAGGY
-$('[draggy]').on('mouseover', function() {
+$('[draggy]').on('mouseover mouseenter', function() {
     $('.cursor').addClass('draggy');
     $('.c-info').text('DRAG');
 });
-$('[draggy]').on('mouseout', function() {
+$('[draggy]').on('mouseout mouseleave', function() {
     $('.cursor').removeClass('draggy');
 });
 
 
 // HOVER ON LINK
-$('a').on('mouseover', function() {
+$('a').on('mouseover mouseenter', function() {
     $('.c-info').text($(this).attr('info'));
     if ($(this).attr('draggy')) {
         $('.cursor').addClass('active');
@@ -64,7 +64,7 @@ $('a').on('mouseover', function() {
 
 });
 // Hover on a link
-$('a').on('mouseout', function() {
+$('a').on('mouseout mouseleave', function() {
     if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').removeClass('active white');
         $('.c-info').removeClass('active');
