@@ -22,7 +22,7 @@ function logoMove(e) {
     $(heroXtra).attr('offset', heroMouseYper2 + '%');
     heroLight.style.transform = `translateX(${e.pageX}px) translateY(${e.pageY}px)`;
     this.querySelectorAll('.logosvg').forEach(logoSvg => {
-        logoSvg.style.filter = `drop-shadow(${heroMouseOpposeX}px ${heroMouseOpposeY}px 6px #646464) drop-shadow(${heroMouseX}px ${heroMouseY}px 6px #1a1a1a)`;
+        logoSvg.style.filter = `drop-shadow(${heroMouseOpposeX}px ${heroMouseOpposeY}px 6px #777777) drop-shadow(${heroMouseX}px ${heroMouseY}px 6px #111111)`;
     });
 }
 //END HERO ANIMATION//
