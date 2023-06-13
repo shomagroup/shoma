@@ -3,6 +3,7 @@ var hero = document.querySelector('.hero');
 var logo = document.querySelector('.logosvg');
 var heroLight = document.querySelector('.hero-light');
 var heroXtra = document.querySelector('#heroeXtra');
+
 hero.addEventListener('mousemove', logoMove);
 
 function logoMove(e) {
