@@ -35,22 +35,21 @@ let hs1In = gsap.timeline({
         trigger: ".hs1",
         start: "25% 85%",
         end: "85% 50%",
-        scrub: 0.8,
-        markers: true
+        scrub: 1
     }
 });
 
 hs1In.from('.hs1-card', {
     y: "50%",
     opacity: 0,
-    duration: 3,
+    duration: 4,
     stagger: 6.5
 });
 
 hs1In.to('.hs1-card', {
     y: "-50%",
     opacity: 0,
-    duration: 3,
+    duration: 4,
     stagger: 6.5
 });
 
