@@ -26,3 +26,29 @@ function logoMove(e) {
     });
 }
 //END HERO ANIMATION//
+
+// HERO SECTION 1 SCROLL TRANSITION
+
+let hs1In = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".hs1",
+            start: "25% 65%",
+            end: "85% 50%",
+            scrub: 1,
+            markers: true
+        }
+    })
+    .from('.hs1-card', {
+        y: "50%",
+        opacity: 0,
+        duration: 6,
+        stagger: 6.5
+    })
+    .to('.hs1-card', {
+        y: "-50%",
+        opacity: 0,
+        duration: 6,
+        stagger: 6.5
+    });
+
+// END OF HERO SECTION 1 SCROLL TRANSITION
