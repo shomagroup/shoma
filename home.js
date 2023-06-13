@@ -34,8 +34,7 @@ let hs1In = gsap.timeline({
             trigger: ".hs1",
             start: "25% 65%",
             end: "85% 50%",
-            scrub: 1,
-            markers: true
+            scrub: 1
         }
     })
     .from('.hs1-card', {
