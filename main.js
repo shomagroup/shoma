@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.14 0.4';
+let codeVer = '23.06.14 0.5';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -27,27 +27,7 @@ $('.editing').removeClass('editing');
 
 // ------ CURSOR HOVER ----- //
 
-let hoveredElement = null;
-const scrollContainer = document.querySelector('.body');
-addHoverListeners(scrollContainer, hover);
 
-function addHoverListeners(scrollContainer, hover) {
-    let mouseX, mouseY;
-
-    document.addEventListener('mousemove', event => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-
-        hover(event.target);
-    }, { passive: true });
-
-    scrollContainer.addEventListener('scroll', debounce(() => {
-        const hoverTarget = document.elementFromPoint(mouseX, mouseY);
-        if (hoverTarget) {
-            hover(hoverTarget);
-        }
-    }, 5), { passive: true });
-}
 
 // HOVER ON LINK
 
@@ -87,7 +67,6 @@ $('a').on('mouseout mouseleave', function() {
     }
 });
 
-
 // IS WHITE (contents are too light for the cursor to contrast)
 $('[white]').on('mouseover mouseenter', function() {
     $('.cursor').addClass('white');
@@ -105,6 +84,7 @@ $('[draggy]').on('mouseout mouseleave', function() {
     $('.cursor').removeClass('draggy');
 });
 
+// ------ CURSOR HOVER ----- //
 
 // MENU
 $('.m-button').on('click', function() {
