@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.14 0.6';
+let codeVer = '23.06.14 0.7';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -26,9 +26,13 @@ $('.editing').removeClass('editing');
 
 
 // ------ CURSOR HOVER ----- //
+
+
 let hoveredElement = null;
-const scrollContainer = document.querySelector('.body');
-addHoverListeners(scrollContainer, hover);
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollContainer = document.querySelector('.body');
+    addHoverListeners(scrollContainer, hover);
+});
 
 function addHoverListeners(scrollContainer, hover) {
     let mouseX, mouseY;
