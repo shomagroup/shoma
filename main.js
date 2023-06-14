@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.14 1.0';
+let codeVer = '23.06.14 1.1';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -48,7 +48,7 @@ $('[draggy]').on('mouseout mouseleave', function() {
 
 $('a').on('mouseover mouseenter', function() {
     $('.c-info').text($(this).attr('info'));
-    if ($(this).attr('draggy')) {
+    if ($(this).attr('draggy') || $(this).closest('div[draggy]')) {
         $('.cursor').addClass('active');
         $('.c-info').text('VIEW');
     } else if ($(this).attr('info') && $(this).attr('white')) {
