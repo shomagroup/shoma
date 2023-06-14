@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.14 0.0';
+let codeVer = '23.06.14 0.1';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -41,43 +41,6 @@ $('[draggy]').on('mouseover mouseenter', function() {
 });
 $('[draggy]').on('mouseout mouseleave', function() {
     $('.cursor').removeClass('draggy');
-});
-
-
-// HOVER ON LINK
-$('a').on('mouseover mouseenter', function() {
-    $('.c-info').text($(this).attr('info'));
-    if ($(this).attr('draggy')) {
-        $('.cursor').addClass('active');
-        $('.c-info').text('VIEW');
-    } else if ($(this).attr('info') && $(this).attr('white')) {
-        $('.cursor').addClass('active white');
-        $('.c-info').addClass('active');
-    } else if ($(this).attr('info')) {
-        $('.cursor').addClass('active');
-        $('.c-info').addClass('active');
-    } else if ($(this).attr('white')) {
-        $('.cursor').addClass('active white');
-    } else {
-        $('.cursor').addClass('active');
-    }
-
-});
-// Hover on a link
-$('a').on('mouseout mouseleave', function() {
-    if ($(this).attr('info') && $(this).attr('white')) {
-        $('.cursor').removeClass('active white');
-        $('.c-info').removeClass('active');
-    } else if ($(this).attr('info')) {
-        $('.cursor').removeClass('active');
-        $('.c-info').removeClass('active');
-    } else if ($(this).attr('white')) {
-        $('.cursor').removeClass('active white');
-        $('.c-info').removeClass('active');
-    } else {
-        $('.cursor').removeClass('active');
-        $('.c-info').removeClass('active');
-    }
 });
 
 
