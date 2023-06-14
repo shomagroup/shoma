@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.14 0.8';
+let codeVer = '23.06.14 0.9';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -28,52 +28,6 @@ $('.editing').removeClass('editing');
 // ------ CURSOR HOVER ----- //
 
 
-let hoveredElement = null;
-document.addEventListener('DOMContentLoaded', () => {
-    const scrollContainer = document.querySelector('.body');
-    addHoverListeners(scrollContainer, hover);
-});
-
-function addHoverListeners(scrollContainer, hover) {
-    let mouseX, mouseY;
-
-    document.addEventListener('mousemove', event => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-
-        hover(event.target);
-    }, { passive: true });
-
-    scrollContainer.addEventListener('scroll', debounce(() => {
-        const hoverTarget = document.elementFromPoint(mouseX, mouseY);
-        if (hoverTarget) {
-            hover(hoverTarget);
-        }
-    }, 5), { passive: true });
-}
-
-function debounce(func, wait, immediate = false) {
-    let timeout;
-
-    return function() {
-        const context = this,
-            args = arguments;
-        const later = function() {
-            timeout = null;
-            if (!immediate) {
-                func.apply(context, args);
-            }
-        };
-
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-
-        if (callNow) {
-            func.apply(context, args);
-        }
-    };
-};
 
 
 // HOVER ON LINK
