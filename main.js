@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.14 0.9';
+let codeVer = '23.06.14 1.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -27,8 +27,22 @@ $('.editing').removeClass('editing');
 
 // ------ CURSOR HOVER ----- //
 
+// IS WHITE (contents are too light for the cursor to contrast)
+$('[white]').on('mouseover mouseenter', function() {
+    $('.cursor').addClass('white');
+});
+$('[white]').on('mouseout mouseleave', function() {
+    $('.cursor').removeClass('white');
+});
 
-
+// IS DRAGGY
+$('[draggy]').on('mouseover mouseenter', function() {
+    $('.cursor').addClass('draggy');
+    $('.c-info').text('DRAG');
+});
+$('[draggy]').on('mouseout mouseleave', function() {
+    $('.cursor').removeClass('draggy');
+});
 
 // HOVER ON LINK
 
@@ -66,23 +80,6 @@ $('a').on('mouseout mouseleave', function() {
         $('.cursor').removeClass('active');
         $('.c-info').removeClass('active');
     }
-});
-
-// IS WHITE (contents are too light for the cursor to contrast)
-$('[white]').on('mouseover mouseenter', function() {
-    $('.cursor').addClass('white');
-});
-$('[white]').on('mouseout mouseleave', function() {
-    $('.cursor').removeClass('white');
-});
-
-// IS DRAGGY
-$('[draggy]').on('mouseover mouseenter', function() {
-    $('.cursor').addClass('draggy');
-    $('.c-info').text('DRAG');
-});
-$('[draggy]').on('mouseout mouseleave', function() {
-    $('.cursor').removeClass('draggy');
 });
 
 // ------ CURSOR HOVER ----- //
