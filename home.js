@@ -17,7 +17,6 @@ function logoMove(e) {
         var heroHeight = hero.offsetHeight;
         var setBlur = 6;
         var opacitea = 1;
-        console.log('Desk ' + heroWidth, heroHeight);
     }
 
     if (heroWidthSetter < 992 && heroWidthSetter > 768) {
@@ -25,7 +24,6 @@ function logoMove(e) {
         var heroHeight = hero.offsetHeight * 1.2;
         var setBlur = 4;
         var opacitea = .75;
-        console.log('Ipad ' + heroWidth, heroHeight);
     }
 
     if (heroWidthSetter < 768) {
@@ -33,21 +31,17 @@ function logoMove(e) {
         var heroHeight = (hero.offsetHeight * 1.3);
         var setBlur = 4;
         var opacitea = .75;
-        console.log('Mobile ' + heroWidth, heroHeight);
     }
 
 
     const centerX = hero.offsetLeft + heroWidth / 2;
     const centerY = hero.offsetTop + heroHeight / 2;
-    console.log('Center ' + centerX, centerY);
 
     const heroMouseX = ((e.clientX - centerX) / 9 / heroWidth * 105).toFixed(1);
     const heroMouseY = ((e.clientY - centerY) / 9 / heroHeight * 106).toFixed(1);
-    console.log('heroMouse ' + heroMouseX, heroMouseY);
 
     const heroMouseOpposeX = heroMouseX * -1;
     const heroMouseOpposeY = heroMouseY * -1;
-    console.log('heroMouseOppose ' + heroMouseOpposeX, heroMouseOpposeY);
 
     //const heroMouseXper = ((e.clientX - centerX)/6/heroWidth*1205).toFixed(0);
     //const heroMouseYper = ((e.clientY - centerY)/6/heroHeight*1208).toFixed(0);
