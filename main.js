@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.15 0.1';
+let codeVer = '23.06.15 0.2';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -27,8 +27,64 @@ $('.editing').removeClass('editing');
 
 // ------ CURSOR HOVER ----- //
 
+// IS WHITE (contents are too light for the cursor to contrast)
+$('[white]').on('mouseover mouseenter', function() {
+    $('.cursor').addClass('white');
+});
+$('[white]').on('mouseout mouseleave', function() {
+    $('.cursor').removeClass('white');
+});
 
+// IS DRAGGY
+$('[draggy]').on('mouseover mouseenter', function() {
+    $('.cursor').addClass('draggy');
+});
+$('[draggy]').on('mouseout mouseleave', function() {
+    $('.cursor').removeClass('draggy');
+});
 
+$('[info]').on('mouseover mouseenter', function() {
+    $('.c-info').text($(this).attr('info'));
+    $('.c-info').addClass('active');
+});
+$('[info]').on('mouseout mouseleave', function() {
+    $('.c-info').removeClass('active');
+});
+
+// HoverIn a link
+
+$('a').on('mouseover mouseenter', function() {
+    if ($(this).closest('div').is('[draggy]')) {
+        $('.cursor').addClass('active');
+        $(this).attr('info', 'VIEW');
+        $('.c-info').text($(this).attr('info'));
+    } else if ($(this).attr('info') && $(this).attr('white')) {
+        $('.cursor').addClass('white active');
+        $('.c-info').addClass('active');
+    } else if ($(this).attr('white')) {
+        $('.cursor').addClass('white active');
+    } else {
+        $('.cursor').addClass('active');
+    }
+});
+
+// HoverOut a link
+
+$('a').on('mouseout mouseleave', function() {
+    if ($(this).attr('info') && $(this).attr('white')) {
+        $('.cursor').removeClass('active white');
+        $('.c-info').removeClass('active');
+    } else if ($(this).attr('info')) {
+        $('.cursor').removeClass('active');
+        $('.c-info').removeClass('active');
+    } else if ($(this).attr('white')) {
+        $('.cursor').removeClass('active white');
+        $('.c-info').removeClass('active');
+    } else {
+        $('.cursor').removeClass('active');
+        $('.c-info').removeClass('active');
+    }
+});
 
 // ------ CURSOR HOVER ----- //
 
