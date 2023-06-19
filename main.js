@@ -61,7 +61,7 @@ $('a').on('mouseover mouseenter', function() {
     } else if ($(this).attr('info') && $(this).attr('white')) {
         $('.cursor').addClass('white active');
         $('.c-info').addClass('active');
-    } else if ($(this).attr('white')) {
+    } else if ($(this).attr('white') || $(this).is('.button')) {
         $('.cursor').addClass('white active');
     } else {
         $('.cursor').addClass('active');
