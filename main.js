@@ -77,7 +77,7 @@ $('a').on('mouseout mouseleave', function() {
     } else if ($(this).attr('info')) {
         $('.cursor').removeClass('active');
         $('.c-info').removeClass('active');
-    } else if ($(this).attr('white')) {
+    } else if ($(this).attr('white') || $(this).is('.button')) {
         $('.cursor').removeClass('active white');
         $('.c-info').removeClass('active');
     } else {
