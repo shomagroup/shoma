@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.21 0.1';
+let codeVer = '23.06.21 0.2';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -161,8 +161,6 @@ document.querySelectorAll('.track').forEach(dragabble => {
 
 // ---- FORM ---- //
 $('[datepicker]').attr('type', 'date');
-$('input[read-only]').attr('readonly', '1');
-
 
 $('input[required], textarea[required], select[required]').closest('.f-field-wrap')
 .append('<span class="required-ball"info="Required Field"></span>');
