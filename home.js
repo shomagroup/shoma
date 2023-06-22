@@ -89,3 +89,13 @@ let hs1In = gsap.timeline({
     });
 
 // END OF HERO SECTION 1 SCROLL TRANSITION
+
+// PROJECT SLIDER
+$('.p-card').on('mouseover mouseenter', function() {
+$(this).siblings('.p-card').addClass('not-hover');
+});
+$('.p-card').on('mouseout mouseleave', function() {
+$(this).siblings('.p-card').removeClass('not-hover');
+});
+// PROJECT SLIDER
+
