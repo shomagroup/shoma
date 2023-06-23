@@ -35,7 +35,7 @@ $('[white]').on('mouseout mouseleave', function() {
     $('.cursor').removeClass('white');
 });
 
-// IS DRAGGY:not(:has(< div[not-draggy]))
+// IS DRAGGY
 $('[draggy]').not().find('not-draggy').on('mouseover mouseenter', function() {
     $('.cursor').addClass('draggy');
 });
