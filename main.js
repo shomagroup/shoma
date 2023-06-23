@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.06.22 0.0';
+let codeVer = '23.06.23 0.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -36,7 +36,7 @@ $('[white]').on('mouseout mouseleave', function() {
 });
 
 // IS DRAGGY
-$('[draggy]').on('mouseover mouseenter', function() {
+$('[draggy]:not(:has(< div[not-draggy]))').on('mouseover mouseenter', function() {
     $('.cursor').addClass('draggy');
 });
 $('[draggy]').on('mouseout mouseleave', function() {
