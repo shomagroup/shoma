@@ -36,8 +36,17 @@ $('[white]').on('mouseout mouseleave', function() {
 });
 
 // IS DRAGGY
+$('[draggy]').on('mouseover mouseenter', function() {
+    $('.cursor').addClass('draggy');
+    });
+    $('[notDraggy]').on('mouseover mouseenter', function() {
+    $('.cursor').removeClass('draggy');
+    });
+    $('[draggy]').on('mouseout mouseleave', function() {
+    $('.cursor').removeClass('draggy');
+    });
 
-
+// HAS INFO
 $('[info]').on('mouseover mouseenter', function() {
     $('.c-info').text($(this).attr('info'));
     $('.c-info').addClass('active');
