@@ -6,9 +6,9 @@ var heroXtra = document.querySelector('#heroeXtra');
 
 ////////////////////////////////////////////
 
-hero.addEventListener('mousemove', logoMove);
 
-(function logoMove(e) {
+
+function logoMove(e) {
 
     const heroWidthSetter = hero.offsetWidth;
 
@@ -61,7 +61,9 @@ hero.addEventListener('mousemove', logoMove);
         logoSvg.style.filter = `drop-shadow(${heroMouseOpposeX}px ${heroMouseOpposeY}px ${setBlur}px rgba(119, 119, 119, ${opacitea})) drop-shadow(${heroMouseX}px ${heroMouseY}px ${setBlur}px rgba(17, 17, 17, ${opacitea}))`;
     });
 
-});
+}
+
+hero.addEventListener('mousemove', logoMove);
 //closeing logoMove
 //END HERO ANIMATION//
 
