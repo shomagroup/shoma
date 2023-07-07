@@ -101,32 +101,3 @@ $(this).siblings('.p-card').removeClass('not-hover');
 });
 // PROJECT SLIDER
 
-
-// ==PRESS== //
-//close
-$('.press-above-bg, .press-close').on('click', function() {
-    
-$('.press-article-link').removeClass('open');
-$(this).closest('.press-above').removeClass('open');
-$(this).closest('.track').attr('draggy', '');
-});
-//open
-$('.press-article-link').on('click', function() {
-
-$(this).closest('.track').removeAttr('draggy', '');
-$(this).closest('.track').attr('notDraggy', '');
-
-$(this).closest('.track').find('.press-above').addClass('open');
-$(this).siblings('.press-article-link').removeClass('open');
-$(this).addClass('open');
-
-$('.press-above .press-day').text($(this).attr('day'));
-$('.press-above .press-month-year:nth-child(1)').text($(this).attr('month'));
-$('.press-above .press-month-year:nth-child(2)').text($(this).attr('year'));
-$('.press-above .press-publisher:nth-child(1)').text($(this).attr('publisher'));
-$('.press-above .press-publisher:nth-child(2)').text($(this).attr('project'));
-$('.press-above .press-title').text($(this).attr('title'));
-$('.press-above .press-p').text($(this).attr('highlight'));
-$('.press-above .press-external-link').attr('href', $(this).attr('link'));
-});
-// ==PRESS== end //
