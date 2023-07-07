@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.07.07 0.0';
+let codeVer = '23.07.07 0.1';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -102,55 +102,55 @@ $('.m-link').on('mouseover mouseout', function() {
 
 
 // ---- DRAGGABLE ---- //
-document.querySelectorAll('.track').forEach(dragabble => {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    dragabble.addEventListener('mousedown', (e) => {
-        isDown = true;
-        dragabble.classList.add('active');
-        startX = e.pageX - dragabble.offsetLeft;
-        scrollLeft = dragabble.scrollLeft;
-        cancelMomentumTracking();
-    });
-    dragabble.addEventListener('mouseleave', () => {
-        isDown = false;
-        dragabble.classList.remove('active');
-    });
-    dragabble.addEventListener('mouseup', () => {
-        isDown = false;
-        dragabble.classList.remove('active');
-        beginMomentumTracking();
-    });
-    dragabble.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - dragabble.offsetLeft;
-        const walk = (x - startX) * 1.1; //scroll-fast
-        var prevScrollLeft = dragabble.scrollLeft;
-        dragabble.scrollLeft = scrollLeft - walk;
-        velX = dragabble.scrollLeft - prevScrollLeft;
-    });
-    // Momentum 
-    var velX = 0;
-    var momentumID;
+document.querySelectorAll('.track:not([notDraggy])').forEach(dragabble => {
+let isDown = false;
+let startX;
+let scrollLeft;
+dragabble.addEventListener('mousedown', (e) => {
+    isDown = true;
+    dragabble.classList.add('active');
+    startX = e.pageX - dragabble.offsetLeft;
+    scrollLeft = dragabble.scrollLeft;
+    cancelMomentumTracking();
+});
+dragabble.addEventListener('mouseleave', () => {
+    isDown = false;
+    dragabble.classList.remove('active');
+});
+dragabble.addEventListener('mouseup', () => {
+    isDown = false;
+    dragabble.classList.remove('active');
+    beginMomentumTracking();
+});
+dragabble.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - dragabble.offsetLeft;
+    const walk = (x - startX) * 1.1; //scroll-fast
+    var prevScrollLeft = dragabble.scrollLeft;
+    dragabble.scrollLeft = scrollLeft - walk;
+    velX = dragabble.scrollLeft - prevScrollLeft;
+});
+// Momentum 
+var velX = 0;
+var momentumID;
 
-    function beginMomentumTracking() {
-        cancelMomentumTracking();
-        momentumID = requestAnimationFrame(momentumLoop);
-    }
+function beginMomentumTracking() {
+    cancelMomentumTracking();
+    momentumID = requestAnimationFrame(momentumLoop);
+}
 
-    function cancelMomentumTracking() {
-        cancelAnimationFrame(momentumID);
-    }
+function cancelMomentumTracking() {
+    cancelAnimationFrame(momentumID);
+}
 
-    function momentumLoop() {
-        dragabble.scrollLeft += velX;
-        velX *= 0.95;
-        if (Math.abs(velX) > 0.5) {
-            momentumID = requestAnimationFrame(momentumLoop);
-        }
-    }
+function momentumLoop() {
+dragabble.scrollLeft += velX;
+velX *= 0.95;
+if (Math.abs(velX) > 0.5) {
+    momentumID = requestAnimationFrame(momentumLoop);
+}
+}
 });
 
 
