@@ -67,7 +67,7 @@ logoSvg.style.filter = `drop-shadow(${heroMouseOpposeX}px ${heroMouseOpposeY}px 
 //END HERO ANIMATION//
 
 
-// HERO SECTION 1 SCROLL TRANSITION
+// SECTIONs SCROLL TRANSITION
 
 let hs1In = gsap.timeline({
         scrollTrigger: {
@@ -89,8 +89,52 @@ let hs1In = gsap.timeline({
         duration: 6,
         stagger: 6.5
     });
-
-// END OF HERO SECTION 1 SCROLL TRANSITION
+    let hs2In = gsap.timeline({
+        scrollTrigger: {
+        trigger:'.hs2',
+        start: '-5% center',
+        end: '100% 100%',
+        scrub: 1
+        }
+        })
+        .from('.p-card:nth-child(1),.p-card:nth-child(2),.p-card:nth-child(3),.p-card:nth-child(4),.p-card:nth-child(5)', {
+        y: "-20%",
+        opacity: 0,
+        duration: 6,
+        stagger: 2
+        });
+        
+        
+        let hs3In = gsap.timeline({
+        scrollTrigger: {
+        trigger:'.hs3',
+        start: '-5% center',
+        end: '100% 100%',
+        scrub: 1
+        }
+        })
+        .from('.ppl-card:nth-child(1),.ppl-card:nth-child(2),.ppl-card:nth-child(3)', {
+        x: "25%",
+        opacity: 0,
+        duration: 6,
+        stagger: 2
+        });
+        
+        
+        let hs4In = gsap.timeline({
+        scrollTrigger: {
+        trigger:'.hs4',
+        start: '-5% center',
+        end: '100% 100%',
+        scrub: 1
+        }
+        })
+        .from('.press-article', {
+        opacity: 0,
+        duration: 3,
+        stagger: 2
+        });
+// END OF SECTIONs SCROLL TRANSITION
 
 
 
