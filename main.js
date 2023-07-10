@@ -22,7 +22,7 @@ $('.codever').text(codeVer);
 
 // ClASS CLENSER
 $('.active').removeClass('active');
-$('.editing').removeClass('editing');
+$('.c-wrap').removeClass('off');
 
 
 // ------ CURSOR HOVER ----- //
