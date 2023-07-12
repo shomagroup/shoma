@@ -32,26 +32,21 @@ $('.project').hide();
 //
 if ($(this).text().includes('all')) {
 $('.project').show();
-$('.portfolio-control').css('background','mediumvioletred');
 }
 if ($(this).text().includes('recent')) {
 $('.tagger p').filter(':contains(recent)')
 .closest('.project').show();
-$('.portfolio-control').css('background','mediumspringgreen');
 }
 if ($(this).text().includes('mixed')) {
 $('.tagger p').filter(':contains(mixed)')
 .closest('.project').show();
-$('.portfolio-control').css('background','lightpink');
 }
 if ($(this).text().includes('commercial')) {
 $('.tagger p').filter(':contains(commercial)')
 .closest('.project').show();
-$('.portfolio-control').css('background','indigo');
 }
 if ($(this).text().includes('residential')) {
 $('.tagger p').filter(':contains(residential)')
 .closest('.project').show();
-$('.portfolio-control').css('background','paleturquoise');
 }
 });
