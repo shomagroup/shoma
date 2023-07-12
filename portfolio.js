@@ -9,17 +9,49 @@ $('.project').show();
 } else {
 $('.portfolio-link').removeClass('filtered');
 $('.search').addClass('active');
-$(this).attr('info', 'Close')
+$(this).attr('info', 'Close');
+$('.project').show();
 }
 });
-//make tex tagger lowercase for filter
+// Make text tagger lowercase for filter
 $('.tagger p').text(function(i, text) {
 return text.toLowerCase();
 });
-//filter for searchbar
+// Filter for searchbar
 $('input.search').on('input', function() {
 var searchValue = $(this).val().toLowerCase();
 $('.tagger p').closest('.project').hide();
 $('.tagger p').filter(':contains(' + searchValue + ')')
 .closest('.project').show();
+});
+// Filter Buttons
+$('.portfolio-link').on('click',function(){
+$('.portfolio-link').removeClass('filtered');
+$(this).addClass('filtered');
+$('.project').hide();
+//
+if ($(this).text().includes('all')) {
+$('.project').show();
+$('.portfolio-control').css('background','mediumvioletred');
+}
+if ($(this).text().includes('recent')) {
+$('.tagger p').filter(':contains(recent)')
+.closest('.project').show();
+$('.portfolio-control').css('background','mediumspringgreen');
+}
+if ($(this).text().includes('mixed')) {
+$('.tagger p').filter(':contains(mixed)')
+.closest('.project').show();
+$('.portfolio-control').css('background','lightpink');
+}
+if ($(this).text().includes('commercial')) {
+$('.tagger p').filter(':contains(commercial)')
+.closest('.project').show();
+$('.portfolio-control').css('background','indigo');
+}
+if ($(this).text().includes('residential')) {
+$('.tagger p').filter(':contains(residential)')
+.closest('.project').show();
+$('.portfolio-control').css('background','paleturquoise');
+}
 });
