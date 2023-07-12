@@ -4,8 +4,8 @@ if ($('.search').is('.active')) {
 $('.search').removeClass('active');
 $('input.search').val('');
 $(this).attr('info', 'Search')
-$('.project').removeClass('hidden');
 $('.portfolio-link:nth-child(2)').addClass('filtered');
+$('.project').show();
 } else {
 $('.portfolio-link').removeClass('filtered');
 $('.search').addClass('active');
