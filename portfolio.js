@@ -50,3 +50,5 @@ $('.tagger p').filter(':contains(residential)')
 .closest('.project').show();
 }
 });
+
+

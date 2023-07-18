@@ -1,8 +1,9 @@
 // Update Log
-let codeVer = '23.07.12 0.0';
+let codeVer = '23.07.18 0.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
+let url = window.location.href;
 
 // CUSTOM MOUSE
 (function() {
