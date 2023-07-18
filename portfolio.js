@@ -52,3 +52,16 @@ $('.tagger p').filter(':contains(residential)')
 });
 
 
+// to Auto filter with Link
+if (url.includes('recent')) {
+$('#recent').trigger('click');
+}
+if (url.includes('mixed')) {
+$('#mixed').trigger('click');
+}
+if (url.includes('commercial')) {
+$('#commercial').trigger('click');
+}
+if (url.includes('residential')) {
+$('#residential').trigger('click');
+}

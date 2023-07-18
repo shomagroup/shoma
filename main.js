@@ -211,3 +211,8 @@ $('input[read-only]').attr('readonly', '1');
 
 $('input[required], textarea[required], select[required]').closest('.f-field-wrap')
 .append('<span class="required-ball"info="Required Field"></span>');
+
+$.urlParam = function(name) {
+    var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+    if (results == null) { return null; } else { return results[1] || 0; }
+}
