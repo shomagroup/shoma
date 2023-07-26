@@ -238,7 +238,7 @@ stagger: 1
 
 let hs4In = gsap.timeline({
 scrollTrigger: {
-trigger:'.hs4',
+trigger:'.press-section',
 start: '-5% center',
 end: '100% 100%',
 scrub: 1
