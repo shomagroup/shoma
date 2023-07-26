@@ -228,7 +228,7 @@ end: '90% 100%',
 scrub: 1
 }
 })
-.from('.p-card:nth-child(1),.p-card:nth-child(2),.p-card:nth-child(3),.p-card:nth-child(4)', {
+.from('.p-card-wrap:nth-child(1),.p-card-wrap:nth-child(2),.p-card-wrap:nth-child(3),.p-card-wrap:nth-child(4)', {
 y: "-20%",
 opacity: 0,
 duration: 6,
