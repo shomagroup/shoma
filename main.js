@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.07.18 0.0';
+let codeVer = '23.07.26 0.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -216,3 +216,36 @@ $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
     if (results == null) { return null; } else { return results[1] || 0; }
 }
+
+
+// ANIMATIONS HERE //
+
+let hs3In = gsap.timeline({
+scrollTrigger: {
+trigger:'.hs3',
+start: '-5% center',
+end: '100% 100%',
+scrub: 1
+}
+})
+.from('.ppl-card:nth-child(1),.ppl-card:nth-child(2),.ppl-card:nth-child(3)', {
+x: "25%",
+opacity: 0,
+duration: 6,
+stagger: 2
+});
+
+
+let hs4In = gsap.timeline({
+scrollTrigger: {
+trigger:'.hs4',
+start: '-5% center',
+end: '100% 100%',
+scrub: 1
+}
+})
+.from('.press-article', {
+opacity: 0,
+duration: 3,
+stagger: 2
+});

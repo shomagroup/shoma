@@ -103,37 +103,6 @@ let hs1In = gsap.timeline({
         duration: 6,
         stagger: 2
         });
-        
-        
-        let hs3In = gsap.timeline({
-        scrollTrigger: {
-        trigger:'.hs3',
-        start: '-5% center',
-        end: '100% 100%',
-        scrub: 1
-        }
-        })
-        .from('.ppl-card:nth-child(1),.ppl-card:nth-child(2),.ppl-card:nth-child(3)', {
-        x: "25%",
-        opacity: 0,
-        duration: 6,
-        stagger: 2
-        });
-        
-        
-        let hs4In = gsap.timeline({
-        scrollTrigger: {
-        trigger:'.hs4',
-        start: '-5% center',
-        end: '100% 100%',
-        scrub: 1
-        }
-        })
-        .from('.press-article', {
-        opacity: 0,
-        duration: 3,
-        stagger: 2
-        });
 // END OF SECTIONs SCROLL TRANSITION
 
 
