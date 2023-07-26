@@ -224,15 +224,15 @@ let hs2In = gsap.timeline({
 scrollTrigger: {
 trigger:'.hs2',
 start: '-5% center',
-end: '100% 100%',
+end: '90% 100%',
 scrub: 1
 }
 })
-.from('.p-card:nth-child(1),.p-card:nth-child(2),.p-card:nth-child(3),.p-card:nth-child(4),.p-card:nth-child(5)', {
+.from('.p-card:nth-child(1),.p-card:nth-child(2),.p-card:nth-child(3),.p-card:nth-child(4)', {
 y: "-20%",
 opacity: 0,
 duration: 6,
-stagger: 2
+stagger: 1
 });
 
 
