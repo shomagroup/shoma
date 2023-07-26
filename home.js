@@ -89,20 +89,21 @@ let hs1In = gsap.timeline({
         duration: 6,
         stagger: 6.5
     });
-    let hs2In = gsap.timeline({
-        scrollTrigger: {
-        trigger:'.hs2',
-        start: '-5% center',
-        end: '100% 100%',
-        scrub: 1
-        }
-        })
-        .from('.p-card:nth-child(1),.p-card:nth-child(2),.p-card:nth-child(3),.p-card:nth-child(4),.p-card:nth-child(5)', {
-        y: "-20%",
-        opacity: 0,
-        duration: 6,
-        stagger: 2
-        });
+
+        let hs3In = gsap.timeline({
+            scrollTrigger: {
+            trigger:'.hs3',
+            start: '-5% center',
+            end: '100% 100%',
+            scrub: 1
+            }
+            })
+            .from('.ppl-card:nth-child(1),.ppl-card:nth-child(2),.ppl-card:nth-child(3)', {
+            x: "25%",
+            opacity: 0,
+            duration: 6,
+            stagger: 2
+            });
 // END OF SECTIONs SCROLL TRANSITION
 
 
