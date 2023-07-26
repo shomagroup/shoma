@@ -222,7 +222,7 @@ $.urlParam = function(name) {
 
 let hs2In = gsap.timeline({
 scrollTrigger: {
-trigger:'.hs2',
+trigger:'.portfolio-recent',
 start: '-5% center',
 end: '90% 100%',
 scrub: 1
