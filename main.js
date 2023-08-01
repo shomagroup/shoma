@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.07.26 0.0';
+let codeVer = '23.08.01 0.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -47,14 +47,6 @@ $('[draggy]').on('mouseover mouseenter', function() {
     $('.cursor').removeClass('draggy');
     });
 
-// HAS INFO
-$('[info]').on('mouseover mouseenter', function() {
-    $('.c-info').text($(this).attr('info'));
-    $('.c-info').addClass('active');
-});
-$('[info]').on('mouseout mouseleave', function() {
-    $('.c-info').removeClass('active');
-});
 
 // HoverIn a link
 
@@ -89,6 +81,16 @@ $('a').on('mouseout mouseleave', function() {
         $('.cursor').removeClass('active');
         $('.c-info').removeClass('active');
     }
+});
+
+
+// HAS INFO
+$('[info]').on('mouseover mouseenter', function() {
+    $('.c-info').text($(this).attr('info'));
+    $('.c-info').addClass('active');
+});
+$('[info]').on('mouseout mouseleave', function() {
+    $('.c-info').removeClass('active');
 });
 
 // ------ CURSOR HOVER ----- //
