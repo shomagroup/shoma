@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.01 0.0';
+let codeVer = '23.08.01 0.1';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -187,22 +187,20 @@ $('.press-above-bg, .press-close').on('click', function() {
     //open
     $('.press-article-link').on('click', function() {
     
-    $(this).closest('.track').removeAttr('draggy', '');
-    $(this).closest('.track').attr('notDraggy', '');
-    $('.cursor').removeClass('draggy');
     
-    $(this).closest('.track').find('.press-above').addClass('open');
+    
+    $(this).closest('.press-section').find('.press-above').addClass('open');
     $(this).siblings('.press-article-link').removeClass('open');
     $(this).addClass('open');
     
-    $('.press-above .press-day').text($(this).attr('day'));
-    $('.press-above .press-month-year:nth-child(1)').text($(this).attr('month'));
-    $('.press-above .press-month-year:nth-child(2)').text($(this).attr('year'));
-    $('.press-above .press-publisher:nth-child(1)').text($(this).attr('publisher'));
-    $('.press-above .press-publisher:nth-child(2)').text($(this).attr('project'));
-    $('.press-above .press-title').text($(this).attr('title'));
-    $('.press-above .press-p').text($(this).attr('highlight'));
-    $('.press-above .press-external-link').attr('href', $(this).attr('link'));
+    $(this).closest('.press-section').find('.press-above .press-day').text($(this).attr('day'));
+    $(this).closest('.press-section').find('.press-above .press-month-year:nth-child(1)').text($(this).attr('month'));
+    $(this).closest('.press-section').find('.press-above .press-month-year:nth-child(2)').text($(this).attr('year'));
+    $(this).closest('.press-section').find('.press-above .press-publisher:nth-child(1)').text($(this).attr('publisher'));
+    $(this).closest('.press-section').find('.press-above .press-publisher:nth-child(2)').text($(this).attr('project'));
+    $(this).closest('.press-section').find('.press-above .press-title').text($(this).attr('title'));
+    $(this).closest('.press-section').find('.press-above .press-p').text($(this).attr('highlight'));
+    $(this).closest('.press-section').find('.press-above .press-external-link').attr('href', $(this).attr('link'));
     });
     // ==PRESS== end //
 
