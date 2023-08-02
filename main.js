@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.01 0.1';
+let codeVer = '23.08.02 0.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -83,6 +83,16 @@ $('a').on('mouseout mouseleave', function() {
     }
 });
 
+// ---- FORM ---- //
+$('[datepicker]').attr('type', 'datetime-local');
+$('input[read-only]').attr('readonly', '1');
+
+
+var inputRequired = function() {
+$('input[required], textarea[required], select[required]').closest('.f-field-wrap')
+.append('<span class="required-ball"info="Required Field"></span>');
+}
+inputRequired();
 
 // HAS INFO
 $('[info]').on('mouseover mouseenter', function() {
@@ -203,18 +213,6 @@ $('.press-above-bg, .press-close').on('click', function() {
     $(this).closest('.press-section').find('.press-above .press-external-link').attr('href', $(this).attr('link'));
     });
     // ==PRESS== end //
-
-
-// ---- FORM ---- //
-$('[datepicker]').attr('type', 'datetime-local');
-$('input[read-only]').attr('readonly', '1');
-
-
-var inputRequired = function() {
-$('input[required], textarea[required], select[required]').closest('.f-field-wrap')
-.append('<span class="required-ball"info="Required Field"></span>');
-}
-inputRequired();
 
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
