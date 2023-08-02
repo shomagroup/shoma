@@ -209,8 +209,12 @@ $('.press-above-bg, .press-close').on('click', function() {
 $('[datepicker]').attr('type', 'datetime-local');
 $('input[read-only]').attr('readonly', '1');
 
+
+var inputRequired = function() {
 $('input[required], textarea[required], select[required]').closest('.f-field-wrap')
 .append('<span class="required-ball"info="Required Field"></span>');
+}
+inputRequired();
 
 $.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
