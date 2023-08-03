@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.03 0.0';
+let codeVer = '23.08.03 0.1';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -89,7 +89,14 @@ $('input[read-only]').attr('readonly', '1');
 
 
 var inputRequired = function() {
-$('input[required], textarea[required], select[required]').closest('.f-field-wrap')
+
+$('.f-field-wrap:has(> input:not([required])~span.required-ball)').find('span.required-ball').remove();
+$('.f-field-wrap:has(> select:not([required])~span.required-ball)').find('span.required-ball').remove();
+$('.f-field-wrap:has(> textarea:not([required])~span.required-ball)').find('span.required-ball').remove();
+$('.f-field-wrap').has('div:has(>div input:not([required]))~span.required-ball').find('span.required-ball').remove();
+
+
+$('input[required], textarea[required], select[required]').closest('.f-field-wrap').not(':has(>span.required-ball)')
 .append('<span class="required-ball"info="Required Field"></span>');
 
 }
