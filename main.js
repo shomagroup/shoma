@@ -92,13 +92,6 @@ var inputRequired = function() {
 $('input[required], textarea[required], select[required]').closest('.f-field-wrap')
 .append('<span class="required-ball"info="Required Field"></span>');
 
-if ($('.required-ball').closest('.f-field-wrap').is(':has(> input:not([required]))') || 
-$('.required-ball').closest('.f-field-wrap').is(':has(> textarea:not([required]))') ||
-$('.required-ball').closest('.f-field-wrap').is(':has(> select:not([required]))')) {
-$(this).remove();
-$(this).parent().css('background', 'lime');
-}
-
 }
 inputRequired();
 
