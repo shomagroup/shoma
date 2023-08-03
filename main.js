@@ -95,7 +95,6 @@ $('.f-field-wrap:has(> select:not([required])~span.required-ball)').find('span.r
 $('.f-field-wrap:has(> textarea:not([required])~span.required-ball)').find('span.required-ball').remove();
 $('.f-field-wrap').has('div:has(>div input:not([required]))~span.required-ball').find('span.required-ball').remove();
 
-
 $('input[required], textarea[required], select[required]').closest('.f-field-wrap').not(':has(>span.required-ball)')
 .append('<span class="required-ball"info="Required Field"></span>');
 

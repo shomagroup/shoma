@@ -33,14 +33,12 @@ if (heroWidthSetter < 768) {
     var setBlur = 4;
     var opacitea = .75;
 }
-
-
 const centerX = hero.offsetLeft + heroWidth / 2;
 const centerY = hero.offsetTop + heroHeight / 2;
-
+//
 const heroMouseX = ((e.clientX - centerX) / 9 / heroWidth * 105).toFixed(1);
 const heroMouseY = ((e.clientY - centerY) / 9 / heroHeight * 106).toFixed(1);
-
+//
 const heroMouseOpposeX = heroMouseX * -1;
 const heroMouseOpposeY = heroMouseY * -1;
 
