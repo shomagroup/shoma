@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.02 0.0';
+let codeVer = '23.08.03 0.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -91,6 +91,14 @@ $('input[read-only]').attr('readonly', '1');
 var inputRequired = function() {
 $('input[required], textarea[required], select[required]').closest('.f-field-wrap')
 .append('<span class="required-ball"info="Required Field"></span>');
+
+if ($('.required-ball').closest('.f-field-wrap').is(':has(> input:not([required]))') || 
+$('.required-ball').closest('.f-field-wrap').is(':has(> textarea:not([required]))') ||
+$('.required-ball').closest('.f-field-wrap').is(':has(> select:not([required]))')) {
+$(this).remove();
+$(this).parent().css('background', 'lime');
+}
+
 }
 inputRequired();
 
