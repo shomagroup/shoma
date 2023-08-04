@@ -27,7 +27,7 @@ inputRequired();
 $('.faux-button').on('click', function() {
 timestamper();
 locationer();
-$('.s-button').delay(1000).trigger('click');
+$('.s-button').delay(1500).trigger('click');
 });
 
 // timestamp setup
