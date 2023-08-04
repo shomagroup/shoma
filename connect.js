@@ -26,9 +26,16 @@ inputRequired();
 
 $('.faux-button').on('click', function() {
 timestamper();
-$.when(locationer())
-.then($('.s-button').trigger('click'));
-});
+if (navigator.geolocation) {
+    fetch('https://ipapi.co/json')
+    .then((response) => response.json())
+    .then((data) => {
+    $("input[name='country']").val(data.country_name);
+    $("input[name='state']").val(data.region);
+    $("input[name='city']").val(data.city);
+    });
+$('.s-button').trigger('click');
+}});
 
 // timestamp setup
 function timestamper() {
