@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.08 0.2';
+let codeVer = '23.08.08 0.2.1';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -151,18 +151,15 @@ dragabble.addEventListener('mousedown', (e) => {
 dragabble.addEventListener('mouseleave', () => {
     isDown = false;
     dragabble.classList.remove('active');
-    dragabble.find('a').css('pointer-events', 'auto');
 });
 dragabble.addEventListener('mouseup', () => {
     isDown = false;
     dragabble.classList.remove('active');
     beginMomentumTracking();
-    dragabble.find('a').css('pointer-events', 'auto');
 });
 dragabble.addEventListener('mousemove', (e) => {
     if (!isDown) return;
     e.preventDefault();
-    dragabble.find('a').css('pointer-events', 'none');
     const x = e.pageX - dragabble.offsetLeft;
     const walk = (x - startX) * 1.1; //scroll-fast
     var prevScrollLeft = dragabble.scrollLeft;
@@ -176,10 +173,12 @@ var momentumID;
 function beginMomentumTracking() {
 cancelMomentumTracking();
 momentumID = requestAnimationFrame(momentumLoop);
+dragabble.find('a').css('pointer-events', 'none');
 }
 
 function cancelMomentumTracking() {
 cancelAnimationFrame(momentumID);
+dragabble.find('a').css('pointer-events', 'auto');
 }
 function momentumLoop() {
 dragabble.scrollLeft += velX;
