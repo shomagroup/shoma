@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.08 0.2.2';
+let codeVer = '23.08.08 0.2.3';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -159,6 +159,7 @@ dragabble.addEventListener('mouseup', () => {
 });
 dragabble.addEventListener('mousemove', (e) => {
     if (!isDown) return;
+    dragabble.find('a').css('pointer-events', 'none');
     e.preventDefault();
     const x = e.pageX - dragabble.offsetLeft;
     const walk = (x - startX) * 1.1; //scroll-fast
