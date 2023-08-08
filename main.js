@@ -143,18 +143,18 @@ let startX;
 let scrollLeft;
 dragabble.addEventListener('mousedown', (e) => {
     isDown = true;
-    dragabble.addClass('active');
+    dragabble.classList.add('active');
     startX = e.pageX - dragabble.offsetLeft;
     scrollLeft = dragabble.scrollLeft;
     cancelMomentumTracking();
 });
 dragabble.addEventListener('mouseleave', () => {
     isDown = false;
-    dragabble.removeClass('active');
+    dragabble.classList.remove('active');
 });
 dragabble.addEventListener('mouseup', () => {
     isDown = false;
-    dragabble.removeClass('active');
+    dragabble.classList.remove('active');
     beginMomentumTracking();
 });
 dragabble.addEventListener('mousemove', (e) => {
