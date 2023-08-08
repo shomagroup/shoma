@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.08 0.2.4';
+let codeVer = '23.08.08 0.2.5';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -155,7 +155,9 @@ dragabble.addEventListener('mouseleave', () => {
 dragabble.addEventListener('mouseup', () => {
     isDown = false;
     dragabble.classList.remove('active');
+    dragabble.find('a').css('pointer-events', 'none');
     beginMomentumTracking();
+    
 });
 dragabble.addEventListener('mousemove', (e) => {
     if (!isDown) return;
