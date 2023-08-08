@@ -178,9 +178,9 @@ dragabble.find('a').css('pointer-events', 'none');
 
 function cancelMomentumTracking() {
 cancelAnimationFrame(momentumID);
-dragabble.find('a').css('pointer-events', 'auto');
 }
 function momentumLoop() {
+dragabble.find('a').css('pointer-events', 'none');
 dragabble.scrollLeft += velX;
 velX *= 0.95;
 if (Math.abs(velX) > 0.5) {
