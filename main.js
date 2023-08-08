@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.08 0.0';
+let codeVer = '23.08.08 0.1';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -137,7 +137,7 @@ $('.m-link').on('mouseover mouseout', function() {
 
 
 // ---- DRAGGABLE ---- //
-document.querySelectorAll('.track[draggy])').forEach(dragabble => {
+document.querySelectorAll('.track[draggy]').forEach(dragabble => {
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -171,19 +171,18 @@ var velX = 0;
 var momentumID;
 
 function beginMomentumTracking() {
-    cancelMomentumTracking();
-    momentumID = requestAnimationFrame(momentumLoop);
+cancelMomentumTracking();
+momentumID = requestAnimationFrame(momentumLoop);
 }
 
 function cancelMomentumTracking() {
-    cancelAnimationFrame(momentumID);
+cancelAnimationFrame(momentumID);
 }
-
 function momentumLoop() {
 dragabble.scrollLeft += velX;
 velX *= 0.95;
 if (Math.abs(velX) > 0.5) {
-    momentumID = requestAnimationFrame(momentumLoop);
+momentumID = requestAnimationFrame(momentumLoop);
 }
 }
 });
