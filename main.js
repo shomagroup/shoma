@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.05 0.0';
+let codeVer = '23.08.08 0.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -137,24 +137,24 @@ $('.m-link').on('mouseover mouseout', function() {
 
 
 // ---- DRAGGABLE ---- //
-document.querySelectorAll('.track:not([notDraggy])').forEach(dragabble => {
+document.querySelectorAll('.track[draggy])').forEach(dragabble => {
 let isDown = false;
 let startX;
 let scrollLeft;
 dragabble.addEventListener('mousedown', (e) => {
     isDown = true;
-    dragabble.classList.add('active');
+    dragabble.addClass('active');
     startX = e.pageX - dragabble.offsetLeft;
     scrollLeft = dragabble.scrollLeft;
     cancelMomentumTracking();
 });
 dragabble.addEventListener('mouseleave', () => {
     isDown = false;
-    dragabble.classList.remove('active');
+    dragabble.removeClass('active');
 });
 dragabble.addEventListener('mouseup', () => {
     isDown = false;
-    dragabble.classList.remove('active');
+    dragabble.removeClass('active');
     beginMomentumTracking();
 });
 dragabble.addEventListener('mousemove', (e) => {
@@ -228,8 +228,8 @@ $('.press-above-bg, .press-close').on('click', function() {
     // ==PRESS== end //
 
 $.urlParam = function(name) {
-    var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
-    if (results == null) { return null; } else { return results[1] || 0; }
+var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+if (results == null) { return null; } else { return results[1] || 0; }
 }
 
 
