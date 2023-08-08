@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.08 0.2.6';
+let codeVer = '23.08.08 0.2.7';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -136,60 +136,7 @@ $('.m-link').on('mouseover mouseout', function() {
 });
 
 
-// ---- DRAGGABLE ---- //
-document.querySelectorAll('.track[draggy]').forEach(dragabble => {
-let isDown = false;
-let startX;
-let scrollLeft;
-dragabble.addEventListener('mousedown', (e) => {
-    isDown = true;
-    dragabble.classList.add('dragging');
-    startX = e.pageX - dragabble.offsetLeft;
-    scrollLeft = dragabble.scrollLeft;
-    cancelMomentumTracking();
-});
-dragabble.addEventListener('mouseleave', () => {
-    isDown = false;
-    dragabble.classList.remove('dragging');
-});
-dragabble.addEventListener('mouseup', () => {
-    isDown = false;
-    dragabble.classList.remove('dragging');
-    beginMomentumTracking();
-    dragabble.css('pointer-events', 'none');
-});
-dragabble.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - dragabble.offsetLeft;
-    const walk = (x - startX) * 1.1; //scroll-fast
-    var prevScrollLeft = dragabble.scrollLeft;
-    dragabble.scrollLeft = scrollLeft - walk;
-    velX = dragabble.scrollLeft - prevScrollLeft;
-});
-// Momentum 
-var velX = 0;
-var momentumID;
 
-function beginMomentumTracking() {
-cancelMomentumTracking();
-dragabble.css('pointer-events', 'none');
-momentumID = requestAnimationFrame(momentumLoop);
-}
-
-function cancelMomentumTracking() {
-cancelAnimationFrame(momentumID);
-
-}
-function momentumLoop() {
-dragabble.css('pointer-events', 'none');
-dragabble.scrollLeft += velX;
-velX *= 0.95;
-if (Math.abs(velX) > 0.5) {
-momentumID = requestAnimationFrame(momentumLoop);
-}
-}
-});
 
 
 // PROJECT SLIDER
