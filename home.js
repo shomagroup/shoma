@@ -68,40 +68,40 @@ logoSvg.style.filter = `drop-shadow(${heroMouseOpposeX}px ${heroMouseOpposeY}px 
 // SECTIONs SCROLL TRANSITION
 
 let hs1In = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".hs1",
-            start: "25% 65%",
-            end: "85% 50%",
-            scrub: 1
-        }
-    })
-    .from('.hs1-card', {
-        y: "50%",
-        opacity: 0,
-        duration: 6,
-        stagger: 6.5
-    })
-    .to('.hs1-card', {
-        y: "-50%",
-        opacity: 0,
-        duration: 6,
-        stagger: 6.5
-    });
+scrollTrigger: {
+    trigger: ".hs1",
+    start: "25% 65%",
+    end: "85% 50%",
+    scrub: 1
+}
+})
+.from('.hs1-card', {
+    y: "50%",
+    opacity: 0,
+    duration: 6,
+    stagger: 6.5
+})
+.to('.hs1-card', {
+    y: "-50%",
+    opacity: 0,
+    duration: 6,
+    stagger: 6.5
+});
 
-        let hs3In = gsap.timeline({
-            scrollTrigger: {
-            trigger:'.hs3',
-            start: '-5% center',
-            end: '100% 100%',
-            scrub: 1
-            }
-            })
-            .from('.ppl-card:nth-child(1),.ppl-card:nth-child(2),.ppl-card:nth-child(3)', {
-            x: "25%",
-            opacity: 0,
-            duration: 6,
-            stagger: 2
-            });
+let hs3In = gsap.timeline({
+    scrollTrigger: {
+    trigger:'.hs3',
+    start: '-5% center',
+    end: '100% 100%',
+    scrub: 1
+    }
+    })
+    .from('.ppl-card:nth-child(1),.ppl-card:nth-child(2),.ppl-card:nth-child(3)', {
+    x: "25%",
+    opacity: 0,
+    duration: 6,
+    stagger: 2
+    });
 // END OF SECTIONs SCROLL TRANSITION
 
 
