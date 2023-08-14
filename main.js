@@ -165,11 +165,11 @@ if(isDragged){
 for(let i = 0; i<elements.length; i++){
 elements[i].addEventListener("click", preventClick);
 }
-}else{
+
+} else{
 for(let i = 0; i<elements.length; i++){
 elements[i].removeEventListener("click", preventClick);
-}
-}
+}}
 
 slider.classList.remove("active");
 isDragged = false;
@@ -218,8 +218,8 @@ $(this).closest('.press-section').find('.press-above .press-title').text($(this)
 $(this).closest('.press-section').find('.press-above .press-p').text($(this).attr('highlight'));
 $(this).closest('.press-section').find('.press-above .press-external-link').attr('href', $(this).attr('link'));
 });
-// ==PRESS== end //
 
+// ==PRESS== end //
 $.urlParam = function(name) {
 var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
 if (results == null) { return null; } else { return results[1] || 0; }
