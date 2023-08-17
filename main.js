@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.17 0.0.0';
+let codeVer = '23.08.17 0.0.1';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -261,7 +261,7 @@ stagger: 2
 // Hide Header on on scroll down
 var didScroll;
 var lastScrollTop = 0;
-var delta = 5;
+var delta = 3;
 var navbarHeight = $('#lang-swap').outerHeight();
 
 $(window).scroll(function(event){
@@ -273,7 +273,7 @@ if (didScroll) {
 hasScrolled();
 didScroll = false;
 }
-}, 500);
+}, 250);
 
 function hasScrolled() {
 var st = $(this).scrollTop();
