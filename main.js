@@ -27,6 +27,14 @@ $('.c-wrap').removeClass('off');
 
 
 // ------ CURSOR HOVER ----- //
+// to turn curson off
+
+$('[cursorOff]').on('mouseover mouseenter', function() {
+$('.c-wrap').addClass('off');
+});
+$('[cursorOff]').on('mouseout mouseleave', function() {
+$('.c-wrap').removeClass('off');
+});
 
 // IS WHITE (contents are too light for the cursor to contrast)
 $('[white]').on('mouseover mouseenter', function() {
