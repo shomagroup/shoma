@@ -103,6 +103,3 @@ let hs3In = gsap.timeline({
     stagger: 2
     });
 // END OF SECTIONs SCROLL TRANSITION
-
-
-
