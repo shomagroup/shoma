@@ -30,22 +30,22 @@ $('.portfolio-link').removeClass('filtered');
 $(this).addClass('filtered');
 $('.project').hide();
 //
-if ($(this).text().includes('all')) {
+if ($(this).is('#all')) {
 $('.project').show();
 }
-if ($(this).text().includes('recent')) {
+if ($(this).is('#recent')) {
 $('.tagger p').filter(':contains(recent)')
 .closest('.project').show();
 }
-if ($(this).text().includes('mixed')) {
+if ($(this).is('#mixed')) {
 $('.tagger p').filter(':contains(mixed)')
 .closest('.project').show();
 }
-if ($(this).text().includes('commercial')) {
+if ($(this).is('#commercial')) {
 $('.tagger p').filter(':contains(commercial)')
 .closest('.project').show();
 }
-if ($(this).text().includes('residential')) {
+if ($(this).is('#residential')) {
 $('.tagger p').filter(':contains(residential)')
 .closest('.project').show();
 }
