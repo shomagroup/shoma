@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.25 0.0.3';
+let codeVer = '23.08.25 0.0.4';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -168,10 +168,12 @@ slider.classList.remove("active");
 
 slider.addEventListener("mouseup", e => {
 isDown = false;
-const elements = document.querySelectorAll("div:has(> a)");
+const elements = document.querySelectorAll("a");
 if(isDragged){
 for(let i = 0; i<elements.length; i++){
 elements[i].addEventListener("click", preventClick);
+elements[i].addEventListener("mousedown", preventClick);
+elements[i].addEventListener("mouseup", preventClick);
 }
 
 } else{
@@ -188,7 +190,7 @@ if (!isDown) return;
 isDragged =  true;
 e.preventDefault();
 const x = e.pageX - slider.offsetLeft;
-const walk = (x - startX) * 2;
+const walk = (x - startX) * 3.5;
 slider.scrollLeft = scrollLeft - walk;
 });
 });
