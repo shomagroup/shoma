@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.25 0.0.2';
+let codeVer = '23.08.25 0.0.3';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -212,11 +212,11 @@ $(this).closest('.press-above').removeClass('open');
 $(this).closest('.track').attr('draggy', '');
 });
 //open
-$('.press-article-link').on('mousedown', function() {
+$('.press-article-link').on('click', function() {
 $(this).closest('.press-section').find('.press-above').addClass('open');
 $(this).siblings('.press-article-link').removeClass('open');
 $(this).addClass('open');
-    
+
 $(this).closest('.press-section').find('.press-above .press-day').text($(this).attr('day'));
 $(this).closest('.press-section').find('.press-above .press-month-year:nth-child(1)').text($(this).attr('month'));
 $(this).closest('.press-section').find('.press-above .press-month-year:nth-child(2)').text($(this).attr('year'));
