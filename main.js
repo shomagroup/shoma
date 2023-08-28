@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.25 0.0.4';
+let codeVer = '23.08.28 0.0.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -93,7 +93,7 @@ $('a').on('mouseout mouseleave', function() {
 
 // ---- FORM ---- //
 $('[datepicker]').attr('type', 'datetime-local');
-$('input[read-only]').attr('readonly', '1');
+$('[read-only]').attr('readonly', '1');
 
 
 var inputRequired = function() {
