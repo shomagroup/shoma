@@ -1,34 +1,8 @@
-// Path Selected
-$('.f-choice').on('click', function() {
-if ($(this).is('[b2b]')) {
-$('input[b2b-r]').attr('required', '1');
-$('.b2b-application').addClass('open');
-$('input#b2b').closest('label').trigger('click');
-}
-if ($(this).is('[job]')) {
-$('input[job-r],select[job-r],[job-r] ~ input').attr('required', '1');
-$('.job-application').addClass('open');
-$('input#job').closest('label').trigger('click');
-}
-$(this).addClass('selected');
-$('.message-sect,.faux-button').addClass('open');
-inputRequired();
-});
-
-$('.f-reset-button').on('click', function() {
-$(this).closest('form')[0].reset();
-$('[b2b-r],[job-r],[job-r] ~ input, div:has(> label [job-r])')
-.removeAttr('required');
-$('.b2b-application,.job-application,.message-sect,.faux-button').removeClass('open');
-$('.f-choice').removeClass('selected');
-inputRequired();
-});
-
 $('.faux-button').on('click', function() {
 timestamper();
 locationer();
 setTimeout(() => {
-  $('.s-button').trigger('click');
+$(this).closest('form').find('.s-button').trigger('click');
 }, 800);
 });
 
