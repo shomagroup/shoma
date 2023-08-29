@@ -1,6 +1,9 @@
 $('.faux-button').on('click', function() {
 timestamper();
 locationer();
+if ($(this).closest('form').is('[low-priority]')) {
+$(this).closest('form').find('input[priority]').val('low');
+} else {$(this).closest('form').find('input[priority]').val('high'); }
 setTimeout(() => {
 $(this).closest('form').find('.s-button').trigger('click');
 }, 800);
