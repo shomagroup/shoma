@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.30 0.0.1';
+let codeVer = '23.08.30 0.0.2';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -172,7 +172,6 @@ const elements = document.querySelectorAll("a");
 if(isDragged){
 for(let i = 0; i<elements.length; i++){
 elements[i].addEventListener("click", preventClick);
-elements[i].addEventListener("mousedown", preventClick);
 elements[i].addEventListener("mouseup", preventClick);
 }
 
