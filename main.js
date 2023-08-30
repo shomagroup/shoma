@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.29 0.0.2';
+let codeVer = '23.08.30 0.0.0';
 console.log('ver ' + codeVer);
 $('.codever').text(codeVer);
 
