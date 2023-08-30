@@ -1,6 +1,6 @@
 // Update Log
-let codeVer = '23.08.30 0.0.2';
-console.log('ver ' + codeVer);
+let codeVer = '23.08.30 0.0.3';
+console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
 let url = window.location.href;
@@ -217,7 +217,6 @@ $('.press-article-link').on('click', function() {
 $(this).closest('.press-section').find('.press-above').addClass('open');
 $(this).siblings('.press-article-link').removeClass('open');
 $(this).addClass('open');
-
 $(this).closest('.press-section').find('.press-above .press-day').text($(this).attr('day'));
 $(this).closest('.press-section').find('.press-above .press-month-year:nth-child(1)').text($(this).attr('month'));
 $(this).closest('.press-section').find('.press-above .press-month-year:nth-child(2)').text($(this).attr('year'));
@@ -234,9 +233,7 @@ var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
 if (results == null) { return null; } else { return results[1] || 0; }
 }
 
-
 // ANIMATIONS HERE //
-
 let hs2In = gsap.timeline({
 scrollTrigger: {
 trigger:'.portfolio-recent',
@@ -251,7 +248,6 @@ opacity: 0,
 duration: 6,
 stagger: 1
 });
-
 
 let hs4In = gsap.timeline({
 scrollTrigger: {
