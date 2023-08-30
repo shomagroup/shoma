@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.30 4';
+let codeVer = '23.08.30 5';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -138,7 +138,8 @@ if ($(this).is('.active')) {
     if (!(url.includes('/es')) || !(url.includes('lang=es'))) {
     $(this).attr('info', 'close');
     $('.c-info').text('close');
-    } else {
+    } 
+    if ((url.includes('/es')) || (url.includes('lang=es'))) {
     $(this).attr('info', 'cerrar');
     $('.c-info').text('cerrar');
     }
