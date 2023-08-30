@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.30 5';
+let codeVer = '23.08.30 6';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -61,7 +61,10 @@ $('.cursor').removeClass('draggy');
 $('a').on('mouseover mouseenter', function() {
 if ($(this).closest('div').is('[draggy]')) {
     $('.cursor').addClass('active');
-    $(this).attr('info', 'VIEW');
+    if (!(url.includes('/es')) || !(url.includes('lang=es'))) {
+    $(this).attr('info', 'VIEW');}
+    if ((url.includes('/es')) || (url.includes('lang=es'))) {
+    $(this).attr('info', 'VER');}
     $('.c-info').text($(this).attr('info'));
 } else if ($(this).attr('info') && $(this).attr('white')) {
     $('.cursor').addClass('white active');
