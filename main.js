@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.30 0.0.3';
+let codeVer = '23.08.30 4';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -135,8 +135,14 @@ if ($(this).is('.active')) {
     $('.c-info').text('menu');
 } else {
     $(this).toggleClass('active');
+    if (!(url.includes('/es')) || !(url.includes('lang=es'))) {
     $(this).attr('info', 'close');
     $('.c-info').text('close');
+    } else {
+    $(this).attr('info', 'cerrar');
+    $('.c-info').text('cerrar');
+    }
+    
 }
 });
 $('.m-link').on('mouseover mouseout', function() {
