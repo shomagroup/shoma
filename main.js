@@ -302,3 +302,12 @@ $('#lang-swap').removeClass('up');
 }
 lastScrollTop = st;
 }
+
+$('a[lang="en"]').each(function () {
+var href = $(this).attr('href');
+$(this).attr('href', href + '?lang=en');
+});
+$('a[lang="es"]').each(function () {
+var href = $(this).attr('href');
+$(this).attr('href', href + '?lang=es');
+});
