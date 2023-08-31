@@ -201,6 +201,7 @@ const x = e.pageX - slider.offsetLeft;
 const walk = (x - startX) * 2.5;
 slider.scrollLeft = scrollLeft - walk;
 });
+document.getElementsByClassName('[draggy] a').ondragstart = function() { return false; };
 });
 
 // PROJECT SLIDER
