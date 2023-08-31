@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.08.31';
+let codeVer = '23.08.31 0.0.1';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -182,11 +182,11 @@ const elements = document.querySelectorAll("a");
 if(isDragged){
 for(let i = 0; i<elements.length; i++){
 elements[i].addEventListener("click", preventClick);
+elements[i].addEventListener("mouseup", preventClick);
 }
 
 } else{
 for(let i = 0; i<elements.length; i++){
-elements[i].removeEventListener("click", preventClick);
 }}
 
 slider.classList.remove("active");
