@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.06 0.0.0';
+let codeVer = '23.09.06 0.0.1';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -155,56 +155,6 @@ $('.m-link').on('mouseover mouseout', function() {
 
 // ---- DRAGGABLE ---- //
 document.querySelectorAll('.track[draggy]').forEach(slider => {
-const preventClick = (e) => {
-e.preventDefault();
-e.stopImmediatePropagation();
-}
-let isDown = false;
-var isDragged = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener("mousedown", e => {
-isDown = true;
-slider.classList.add("active");
-startX = e.pageX - slider.offsetLeft;
-scrollLeft = slider.scrollLeft;
-})
-
-slider.addEventListener("mouseleave", () => {
-isDown = false;
-slider.classList.remove("active");
-});
-
-slider.addEventListener("mouseup", e => {
-isDown = false;
-const elements = document.querySelectorAll("a");
-if(isDragged){
-for(let i = 0; i<elements.length; i++){
-elements[i].addEventListener("click", preventClick);
-}
-
-} else{
-for(let i = 0; i<elements.length; i++){
-elements[i].addEventListener("click", preventClick);
-}}
-
-slider.classList.remove("active");
-isDragged = false;
-});
-
-slider.addEventListener("mousemove", e => {
-if (!isDown) return;
-isDragged =  true;
-e.preventDefault();
-const x = e.pageX - slider.offsetLeft;
-const walk = (x - startX) * 2.5;
-slider.scrollLeft = scrollLeft - walk;
-});
-document.getElementsByClassName('[draggy] a').ondragstart = function() { return false; };
-});
-
-document.querySelectorAll('.track[draggy]').forEach(slider => {
       const preventClick = (e) => {
         e.preventDefault();
         e.stopImmediatePropagation();
@@ -216,14 +166,14 @@ document.querySelectorAll('.track[draggy]').forEach(slider => {
 
       slider.addEventListener("mousedown", e => {
         isDown = true;
-        slider.classList.add("active");
+        slider.classList.add("dragging");
         startX = e.pageX - slider.offsetLeft;
         scrollLeft = slider.scrollLeft;
       });
 
       slider.addEventListener("mouseleave", () => {
         isDown = false;
-        slider.classList.remove("active");
+        slider.classList.remove("dragging");
       });
 
       slider.addEventListener("mouseup", e => {
@@ -238,7 +188,7 @@ document.querySelectorAll('.track[draggy]').forEach(slider => {
                   elements[i].removeEventListener("click", preventClick);
             }
         }
-        slider.classList.remove("active");
+        slider.classList.remove("dragging");
         isDragged = false;
       });
 
