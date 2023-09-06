@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.06 0.0.2';
+let codeVer = '23.09.06 0.1.3';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -182,12 +182,10 @@ document.querySelectorAll('.track[draggy]').forEach(slider => {
         if(isDragged){
             for(let i = 0; i<elements.length; i++){
                   elements[i].addEventListener("click", preventClick);
-                  elements[i].addEventListener("mouseup", preventClick);
             }
         }else{
             for(let i = 0; i<elements.length; i++){
                   elements[i].removeEventListener("click", preventClick);
-                  elements[i].removeEventListener("mouseup", preventClick);
             }
         }
         slider.classList.remove("dragging");
