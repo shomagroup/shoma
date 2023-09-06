@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.06 0.1.3';
+let codeVer = '23.09.06 0.1.5';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -155,56 +155,56 @@ $('.m-link').on('mouseover mouseout', function() {
 
 // ---- DRAGGABLE ---- //
 document.querySelectorAll('.track[draggy]').forEach(slider => {
-      const preventClick = (e) => {
-        e.preventDefault();
-        e.stopImmediatePropagation();
+const preventClick = (e) => {
+  e.preventDefault();
+  e.stopImmediatePropagation();
+}
+let isDown = false;
+var isDragged = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener("mousedown", e => {
+  isDown = true;
+  slider.classList.add("dragging");
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener("mouseleave", () => {
+  isDown = false;
+  slider.classList.remove("dragging");
+});
+
+slider.addEventListener("mouseup", e => {
+  isDown = false;
+  const elements = document.querySelectorAll("[draggy] a");
+  if(isDragged){
+      for(let i = 0; i<elements.length; i++){
+            elements[i].addEventListener("click", preventClick);
       }
-      let isDown = false;
-      var isDragged = false;
-      let startX;
-      let scrollLeft;
+  }else{
+      for(let i = 0; i<elements.length; i++){
+            elements[i].removeEventListener("click", preventClick);
+      }
+  }
+  slider.classList.remove("dragging");
+  isDragged = false;
+});
 
-      slider.addEventListener("mousedown", e => {
-        isDown = true;
-        slider.classList.add("dragging");
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-      });
+slider.addEventListener("mousemove", e => {
+  if (!isDown) return;
+  isDragged =  true;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 2.5;
+  slider.scrollLeft = scrollLeft - walk;
+});
 
-      slider.addEventListener("mouseleave", () => {
-        isDown = false;
-        slider.classList.remove("dragging");
-      });
-
-      slider.addEventListener("mouseup", e => {
-        isDown = false;
-        const elements = document.querySelectorAll("[draggy] a");
-        if(isDragged){
-            for(let i = 0; i<elements.length; i++){
-                  elements[i].addEventListener("click", preventClick);
-            }
-        }else{
-            for(let i = 0; i<elements.length; i++){
-                  elements[i].removeEventListener("click", preventClick);
-            }
-        }
-        slider.classList.remove("dragging");
-        isDragged = false;
-      });
-
-      slider.addEventListener("mousemove", e => {
-        if (!isDown) return;
-        isDragged =  true;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2.5;
-        slider.scrollLeft = scrollLeft - walk;
-      });
-
-      document.querySelectorAll("[draggy] a").ondragstart = function() {
-        console.log("Drag start");
-      };
-    });
+document.querySelectorAll("[draggy] a").ondragstart = function() {
+  console.log("Drag start");
+};
+});
 
 // PROJECT SLIDER
 $('.p-card').on('mouseover mouseenter', function() {
