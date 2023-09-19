@@ -39,30 +39,7 @@ $(this).removeClass('open');
 } else {$(this).addClass('open');}
 });
 
-$('.application-link').on('click', function() {
-$('popup-1 form select option').removeAttr('selected', 'selected');
-let position = $(this).attr('position');
-$('.popup-1 form select option[value="'+position+'"]').attr('selected', 'selected');
-$('.popup-1').addClass('open');
-$('.popup-1 form select').attr('readonly', 'readonly');
-$('form:not([low-priority]) .info-thing').attr('switch', 'on');
-$('form:not([low-priority]) .info-thing').text('You are applying for '+position+'');
-});
-
 $('[popup-close]').on('click', function() {
 $('popup-1 form select option').removeAttr('selected', 'selected');
 $('.popup-1').removeClass('open');
-});
-
-$('form[low-priority] select[name="desired-position"]').on('change', function() {
-if (!($('form[low-priority] select[name="desired-position"] option:selected').val() == '')) {
-$('form[low-priority] .info-thing').text('You are applying for position in the'+$('form[low-priority] select[name="desired-position"] option:selected').val()+' department');
-
-$('form[low-priority] .info-thing').attr('switch', 'on');
-} else {$('form[low-priority] .info-thing').attr('switch', 'off');}
-});
-$('.hidden-fields').on('click', function() {
-if ($(this).closest('form').is('[low-priority]')) {
-$(this).closest('form').find('input[name="priority"]').val('low');
-} else {$(this).closest('form').find('input[name="priority"]').val('high');}
 });
