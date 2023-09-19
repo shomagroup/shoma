@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.19 0.1.3';
+let codeVer = '23.09.19 0.2.0';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -245,7 +245,10 @@ var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
 if (results == null) { return null; } else { return results[1] || 0; }
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
 // ANIMATIONS HERE //
+
 let hs2In = gsap.timeline({
 scrollTrigger: {
 trigger:'.portfolio-recent',
