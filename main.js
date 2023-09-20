@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.19 0.2.1';
+let codeVer = '23.09.20 0.1.0';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -44,17 +44,6 @@ $('[white]').on('mouseout mouseleave', function() {
     $('.cursor').removeClass('white');
 });
 
-// IS DRAGGY
-$('[draggy]').on('mouseover mouseenter', function() {
-$('.cursor').addClass('draggy');
-});
-$('[notDraggy]').on('mouseover mouseenter', function() {
-$('.cursor').removeClass('draggy');
-});
-$('[draggy]').on('mouseout mouseleave', function() {
-$('.cursor').removeClass('draggy');
-});
-
 
 // HoverIn a link
 
@@ -86,7 +75,8 @@ $('a').on('mouseout mouseleave', function() {
     } else if ($(this).attr('info')) {
         $('.cursor').removeClass('active');
         $('.c-info').removeClass('active');
-    } else if ($(this).attr('white') || $(this).is('.button')) {
+    } else if ($(this).attr('white') || $(this).is('.button') 
+    || $(this).is('.left-slide') || $(this).is('.right-slide')) {
         $('.cursor').removeClass('active white');
         $('.c-info').removeClass('active');
     } else {
@@ -249,8 +239,7 @@ setInterval(function() {
 if (didScroll) {
 hasScrolled();
 didScroll = false;
-}
-}, 250);
+}}, 250);
 
 function hasScrolled() {
 var st = $(this).scrollTop();
@@ -266,7 +255,5 @@ $('#lang-swap').addClass('up');
 // Scroll Up
 if(st + $(window).height() < $(document).height()) {
 $('#lang-swap').removeClass('up');
-}
-}
-lastScrollTop = st;
-}
+}}
+lastScrollTop = st;}
