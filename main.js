@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.19 0.2.0';
+let codeVer = '23.09.19 0.2.1';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -69,7 +69,8 @@ if ($(this).closest('div').is('[draggy]')) {
 } else if ($(this).attr('info') && $(this).attr('white')) {
     $('.cursor').addClass('white active');
     $('.c-info').addClass('active');
-} else if ($(this).attr('white') || $(this).is('.button')) {
+} else if ($(this).attr('white') || $(this).is('.button')
+|| $(this).is('.left-slide') || $(this).is('.right-slide')) {
     $('.cursor').addClass('white active');
 } else {
     $('.cursor').addClass('active');
