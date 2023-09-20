@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.20 0.2.1';
+let codeVer = '23.09.20 0.2.2';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -24,7 +24,6 @@ let url = window.location.href;
 // ClASS CLENSER
 $('.active').removeClass('active');
 $('.c-wrap').removeClass('off');
-
 
 // ------ CURSOR HOVER ----- //
 // to turn curson off
@@ -69,20 +68,20 @@ if ($(this).closest('div').is('[draggy]')) {
 // HoverOut a link
 
 $('a').on('mouseout mouseleave', function() {
-    if ($(this).attr('info') && $(this).attr('white')) {
-        $('.cursor').removeClass('active white');
-        $('.c-info').removeClass('active');
-    } else if ($(this).attr('info')) {
-        $('.cursor').removeClass('active');
-        $('.c-info').removeClass('active');
-    } else if ($(this).attr('white') || $(this).is('.button') 
-    || $(this).is('.left-slide') || $(this).is('.right-slide')) {
-        $('.cursor').removeClass('active white');
-        $('.c-info').removeClass('active');
-    } else {
-        $('.cursor').removeClass('active');
-        $('.c-info').removeClass('active');
-    }
+if ($(this).attr('info') && $(this).attr('white')) {
+    $('.cursor').removeClass('active white');
+    $('.c-info').removeClass('active');
+} else if ($(this).attr('info')) {
+    $('.cursor').removeClass('active');
+    $('.c-info').removeClass('active');
+} else if ($(this).attr('white') || $(this).is('.button') 
+|| $(this).is('.left-slide') || $(this).is('.right-slide')) {
+    $('.cursor').removeClass('active white');
+    $('.c-info').removeClass('active');
+} else {
+    $('.cursor').removeClass('active');
+    $('.c-info').removeClass('active');
+}
 });
 
 
@@ -155,6 +154,22 @@ $('.p-card').on('mouseout mouseleave', function() {
 $(this).siblings('.p-card').removeClass('not-hover');
 });
 // PROJECT SLIDER
+
+// track control
+var track = document.querySelector('.track');
+var trackWidth = track.offsetWidth / 2;
+
+$('.right-slide').on('click', function() {
+$(this).closest('.track-control').siblings('.track')
+.animate({scrollLeft: $(this).closest('.track-control')
+.siblings('.track').scrollLeft() + trackWidth}, 800);
+});
+$('.left-slide').on('click', function() {
+$(this).closest('.track-control').siblings('.track')
+.animate({scrollLeft: $(this).closest('.track-control')
+.siblings('.track').scrollLeft() - trackWidth}, 800);
+});
+
 
 
 // ==PRESS== //
