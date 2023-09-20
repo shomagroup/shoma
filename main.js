@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.20 0.2.3';
+let codeVer = '23.09.20 0.2.4';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -84,7 +84,21 @@ if ($(this).attr('info') && $(this).attr('white')) {
 }
 });
 
+// TRACK CONTROL
+var track = document.querySelector('.track');
+var trackWidth = track.offsetWidth / 2;
 
+$('.right-slide').on('click', function() {
+$(this).closest('.track-control').siblings('.track')
+.animate({scrollLeft: $(this).closest('.track-control')
+.siblings('.track').scrollLeft() + trackWidth}, 800);
+});
+$('.left-slide').on('click', function() {
+$(this).closest('.track-control').siblings('.track')
+.animate({scrollLeft: $(this).closest('.track-control')
+.siblings('.track').scrollLeft() - trackWidth}, 800);
+});
+// TRACK CONTROL
 
 // ---- FORM ---- //
 $('[datepicker]').attr('type', 'datetime-local');
