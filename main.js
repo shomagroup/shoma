@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.20 0.1.0';
+let codeVer = '23.09.20 0.2.0';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -83,6 +83,21 @@ $('a').on('mouseout mouseleave', function() {
         $('.cursor').removeClass('active');
         $('.c-info').removeClass('active');
     }
+});
+
+
+// track control
+var track = document.querySelector('.track');
+var trackWidth = track.offsetWidth / 2;
+$('.right-slide').on('click', function() {
+var leftPost = $('.track').scrollLeft();
+$(this).closest('.track-control').siblings('.track')
+.animate({scrollLeft: leftPost + trackWidth}, 800);
+});
+$('.left-slide').on('click', function() {
+var leftPost = $('.track').scrollLeft();
+$(this).closest('.track-control').siblings('.track')
+.animate({scrollLeft: leftPost - trackWidth}, 800);
 });
 
 // ---- FORM ---- //
