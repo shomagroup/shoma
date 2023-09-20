@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.20 0.2.2';
+let codeVer = '23.09.20 0.2.3';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -154,21 +154,6 @@ $('.p-card').on('mouseout mouseleave', function() {
 $(this).siblings('.p-card').removeClass('not-hover');
 });
 // PROJECT SLIDER
-
-// track control
-var track = document.querySelector('.track');
-var trackWidth = track.offsetWidth / 2;
-
-$('.right-slide').on('click', function() {
-$(this).closest('.track-control').siblings('.track')
-.animate({scrollLeft: $(this).closest('.track-control')
-.siblings('.track').scrollLeft() + trackWidth}, 800);
-});
-$('.left-slide').on('click', function() {
-$(this).closest('.track-control').siblings('.track')
-.animate({scrollLeft: $(this).closest('.track-control')
-.siblings('.track').scrollLeft() - trackWidth}, 800);
-});
 
 
 
