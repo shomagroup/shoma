@@ -39,3 +39,9 @@ $(this).removeClass('open');
 } else {$(this).addClass('open');}
 });
 
+
+$('[popup-close]').on('click', function() {
+$('popup-1 form select option').removeAttr('selected', 'selected');
+$('.popup-1').removeClass('open');
+$(this).closest('.popup-1').find('form')[0].reset();
+});
