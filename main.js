@@ -45,7 +45,6 @@ $('[white]').on('mouseout mouseleave', function() {
 
 
 // HoverIn a link
-
 $('a').on('mouseover mouseenter', function() {
 if ($(this).closest('div').is('[draggy]')) {
     $('.cursor').addClass('active');
@@ -66,7 +65,6 @@ if ($(this).closest('div').is('[draggy]')) {
 });
 
 // HoverOut a link
-
 $('a').on('mouseout mouseleave', function() {
 if ($(this).attr('info') && $(this).attr('white')) {
     $('.cursor').removeClass('active white');
