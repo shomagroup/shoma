@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.20 0.3.0';
+let codeVer = '23.09.22 0.0.0';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -83,7 +83,7 @@ if ($(this).attr('info') && $(this).attr('white')) {
 });
 
 // TRACK CONTROL
-var track = document.querySelector('.track');
+var track = document.querySelector('.body');
 var trackWidth = track.offsetWidth / 2;
 
 $('.right-slide').on('click', function() {
