@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.09.22 0.0.0';
+let codeVer = '23.11.20 0.0.0';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -271,3 +271,30 @@ if(st + $(window).height() < $(document).height()) {
 $('#lang-swap').removeClass('up');
 }}
 lastScrollTop = st;}
+
+// timestamp setup
+function timestamper() {
+const date = new Date();
+const year = new Intl.DateTimeFormat('en',{year:'2-digit'}).format(date);
+const month = new Intl.DateTimeFormat('en',{month:'short'}).format(date);
+const weekday = new Intl.DateTimeFormat('en',{weekday:'short'}).format(date);
+const day = new Intl.DateTimeFormat('en',{day:'2-digit'}).format(date);
+const time = new Intl.DateTimeFormat('en',{hour:'2-digit', minute:'2-digit', hour12:false}).format(date);
+var timestamp = `${time} ${weekday} ${month} ${day} ${year}`;
+$("input[timestamper]").val(timestamp);
+}
+//
+function locationer() {
+if (navigator.geolocation) {
+fetch('https://ipapi.co/json')
+.then((response) => response.json())
+.then((data) => {
+$("input[name='country']").val(data.country_name);
+$("input[name='state']").val(data.region);
+$("input[name='city']").val(data.city);
+});
+}}
+
+$('a.faux-f-submit').on('click', function() {
+$(this).closest('form').find('.footer-submit').trigger('click');
+});
