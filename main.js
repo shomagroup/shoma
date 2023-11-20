@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.11.20 0.0.0';
+let codeVer = '23.11.20 0.0.1';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -296,5 +296,9 @@ $("input[name='city']").val(data.city);
 }}
 
 $('a.faux-f-submit').on('click', function() {
+timestamper();
+locationer();
+setTimeout(() => {
 $(this).closest('form').find('.footer-submit').trigger('click');
+}, 600);
 });
