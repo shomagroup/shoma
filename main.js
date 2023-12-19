@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.12.19 0.0.2';
+let codeVer = '23.12.19 0.0.3';
 $('.codever').css('display', 'block');
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
@@ -136,7 +136,8 @@ $('[info]').on('mouseout mouseleave', function() {
 
 // MENU
 $('[nav-button]').on('click', function() {
-if (!($('.menu').is('.active'))) {
+if ($('.menu').is('.active')) {
+
 $('.menu').removeClass('active');
 if (!(url.includes('/es')) || !(url.includes('lang=es'))) {
 $(this).attr('info', 'close');
@@ -146,7 +147,8 @@ if ((url.includes('/es')) || (url.includes('lang=es'))) {
 $(this).attr('info', 'cerrar');
 $('.c-info').text('cerrar');}
 }
-if ($('.menu').is('.active')) {
+if (!($('.menu').is('.active'))) {
+
 $('.menu').addClass('active');
 $(this).attr('info', 'menu');
 $('.c-info').text('menu');
