@@ -1,6 +1,6 @@
 // Update Log
 let codeVer = '23.12.19 0.0.5';
-$('.codever').css('display', 'block');
+// $('.codever').css('display', 'block');
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
