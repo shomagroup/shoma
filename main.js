@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.11.20 0.0.1';
+let codeVer = '23.12.19 0.0.1';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
@@ -134,27 +134,28 @@ $('[info]').on('mouseout mouseleave', function() {
 // ------ CURSOR HOVER ----- //
 
 // MENU
-$('.m-button').on('click', function() {
-$('.menu').toggleClass('active');
-if ($(this).is('.active')) {
-    $(this).toggleClass('active');
-    $(this).attr('info', 'menu');
-    $('.c-info').text('menu');
-} else {
-    $(this).toggleClass('active');
-    if (!(url.includes('/es')) || !(url.includes('lang=es'))) {
-    $(this).attr('info', 'close');
-    $('.c-info').text('close');
-    } 
-    if ((url.includes('/es')) || (url.includes('lang=es'))) {
-    $(this).attr('info', 'cerrar');
-    $('.c-info').text('cerrar');
-    }
-    
+$('[nav-button]').on('click', function() {
+if ($('.menu').is('.active')) {
+
+$('.menu').removeClass('active');
+if (!(url.includes('/es')) || !(url.includes('lang=es'))) {
+$(this).attr('info', 'close');
+$('.c-info').text('close');
+} 
+if ((url.includes('/es')) || (url.includes('lang=es'))) {
+$(this).attr('info', 'cerrar');
+$('.c-info').text('cerrar');}
+}
+if (!($('.menu').is('.active'))) {
+
+$('.menu').addClass('active');
+$(this).attr('info', 'menu');
+$('.c-info').text('menu');
 }
 });
+
 $('.m-link').on('mouseover mouseout', function() {
-    $(this).siblings().toggleClass('nothovered');
+$(this).siblings().toggleClass('nothovered');
 });
 
 
