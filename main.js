@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.12.19 0.0.4';
+let codeVer = '23.12.19 0.0.5';
 $('.codever').css('display', 'block');
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
@@ -139,10 +139,7 @@ $('[nav-button]').on('click', function() {
 if (!($('.menu').is('.active'))) {
 
 $('.menu').addClass('active');
-$(this).attr('info', 'menu');
-$('.c-info').text('menu');
-} else {
-$('.menu').removeClass('active');
+
 if (!(url.includes('/es')) || !(url.includes('lang=es'))) {
 $(this).attr('info', 'close');
 $('.c-info').text('close');
@@ -150,9 +147,14 @@ $('.c-info').text('close');
 if ((url.includes('/es')) || (url.includes('lang=es'))) {
 $(this).attr('info', 'cerrar');
 $('.c-info').text('cerrar');}
+
+} else {
+
+$('.menu').removeClass('active');
+
+$(this).attr('info', 'menu');
+$('.c-info').text('menu');
 }
-
-
 });
 
 $('.m-link').on('mouseover mouseout', function() {
