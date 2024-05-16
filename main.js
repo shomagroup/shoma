@@ -306,3 +306,10 @@ setTimeout(() => {
 $(this).closest('form').find('.footer-submit').trigger('click');
 }, 600);
 });
+
+// styles
+$('.newsletter-form').each(function() {
+    var bgColor = $(this).attr('data-bg');
+    $(this).css('--bg-color', bgColor);
+    $(this).closest('form').find('.f-label').css('--bg-color', bgColor);
+    });
