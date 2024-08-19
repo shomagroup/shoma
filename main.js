@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '23.12.19 0.0.5';
+let codeVer = '24.08.19 0.0.0';
 // $('.codever').css('display', 'block');
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
