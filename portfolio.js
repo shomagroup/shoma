@@ -38,15 +38,15 @@ $('.tagger p').filter(':contains(recent)').closest('.project').show();
 }
 if ($(this).is('#mixed')) {
 $('.tagger p').filter(':contains(mixed)').closest('.project').show();
-// $('.project:has(> .mod-amm:not(w-condition-invisible))').show();
+$('.project:has(> .mod-amm:not(w-condition-invisible))').show();
 }
 if ($(this).is('#commercial')) {
 $('.tagger p').filter(':contains(commercial)').closest('.project').show();
-// $('.project:has(> .mod-amm:not(w-condition-invisible))').show();
+$('.project:has(> .mod-amm:not(w-condition-invisible))').show();
 }
 if ($(this).is('#residential')) {
 $('.tagger p').filter(':contains(residential)').closest('.project').show();
-// $('.project:has(> .mod-amm:not(w-condition-invisible))').show();
+$('.project:has(> .mod-amm:not(w-condition-invisible))').show();
 }
 });
 
