@@ -4,7 +4,7 @@ let codeVer = '24.08.19 0.0.2';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
-let url = window.location.href;
+let url = window.location.href;ñ
 
 // CUSTOM MOUSE
 (function() {
@@ -288,6 +288,9 @@ var timestamp = `${time} ${weekday} ${month} ${day} ${year}`;
 $("input[timestamper]").val(timestamp);
 }
 //
+$("input[name='project']").each(function() { $(this).val($(this).closest('.newsletter-form').data('project')); });
+
+
 function locationer() {
 if (navigator.geolocation) {
 fetch('https://ipapi.co/json')
@@ -309,7 +312,7 @@ $(this).closest('form').find('.footer-submit').trigger('click');
 
 // styles
 $('.newsletter-form').each(function() {
-    var bgColor = $(this).attr('data-bg');
-    $(this).css('--bg-color', bgColor);
-    $(this).closest('form').find('.f-label').css('--bg-color', bgColor);
-    });
+var bgColor = $(this).attr('data-bg');
+$(this).css('--bg-color', bgColor);
+$(this).closest('form').find('.f-label').css('--bg-color', bgColor);
+});
