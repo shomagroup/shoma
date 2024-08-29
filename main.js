@@ -1,5 +1,5 @@
 // Update Log
-let codeVer = '24.08.19 0.0.2';
+let codeVer = '24.08.29 0.0.0';
 // $('.codever').css('display', 'block');
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
@@ -289,8 +289,7 @@ $("input[timestamper]").val(timestamp);
 }
 //
 $("input[name='project']").each(function() { $(this).val($(this).closest('.newsletter-form').data('project')); });
-
-
+//
 function locationer() {
 if (navigator.geolocation) {
 fetch('https://ipapi.co/json')
