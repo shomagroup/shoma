@@ -4,7 +4,7 @@ let codeVer = '24.08.29 0.0.0';
 console.log('codeVer ' + codeVer);
 $('.codever').text(codeVer);
 
-let url = window.location.href;ñ
+let url = window.location.href;
 
 // CUSTOM MOUSE
 (function() {
